@@ -1,9 +1,14 @@
 #!/bin/bash
 
-# Setup repositories
+# ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+# setup repositories –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
 dnf check-update
+
+# ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+# install packages –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
 sudo dnf install -y code 				                # vscode
 sudo dnf install -y evolution 				            # mail client
@@ -16,3 +21,9 @@ sudo dnf install -y powerline vim-powerline             # powerline
 sudo dnf install -y steam                               # steam
 sudo dnf install -y ulauncher                           # application launcher
 sudo dnf install -y zsh                                 # zsh
+
+# ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+clear
+notify-send -i emblem-default "dnf Script" "Done!"
+echo "Done!"
