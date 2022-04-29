@@ -12,5 +12,6 @@ sudo dnf install -y file-roller file-roller-nautilus 	# archive manager
 sudo dnf install -y java-latest-openjdk              	# java openjdk
 sudo dnf install -y neofetch                            # systeminfo
 sudo dnf install -y openssl                             # ssl
+sudo dnf install -y powerline vim-powerline             # powerline
 sudo dnf install -y steam                               # steam
 sudo dnf install -y zsh                                 # zsh
