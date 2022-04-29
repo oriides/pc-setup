@@ -72,6 +72,10 @@ sed -i 's,ZSH_THEME=.*,ZSH_THEME="powerlevel10k/powerlevel10k",g' ~/.zshrc
 sed -i 's,plugins=(git),plugins=(git docker docker-compose zsh-autosuggestions),g' ~/.zshrc
 
 # ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+# other ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+## sets up cronjobs
+sudo cp $(dirname $(readlink -f $0))/configs/cronjobs/daily/* /etc/cron.daily/
 
 ## Place todo File in Home directory
 mv $(dirname $(readlink -f $0))/todos.md ~/
