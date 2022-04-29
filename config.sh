@@ -54,3 +54,32 @@ wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20B
 sudo chown -R root:root MesloLGS-NF
 sudo mv MesloLGS-NF /usr/share/fonts/truetype/
 fc-cache -vf
+
+# ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+# configure zsh ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+## install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+## Powerlevel10k for oh-my-zsh
+zsh "git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
+
+## zsh autosuggestions
+zsh "git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
+
+## modify .zshrc to enable theme and plugins
+sed -i 's,ZSH_THEME=.*,ZSH_THEME="powerlevel10k/powerlevel10k",g' ~/.zshrc
+sed -i 's,plugins=(git),plugins=(git docker docker-compose zsh-autosuggestions),g' ~/.zshrc
+
+# ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+## Place todo File in Home directory
+mv $(dirname $(readlink -f $0))/todos.md ~/
+
+# ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+notify-send -i dialog-information "config Script" "Please reboot to apply all changes and consult the todo file in your Home Directory"
+
+clear
+notify-send -i emblem-default "config Script" "Done!"
+echo "Done!"
