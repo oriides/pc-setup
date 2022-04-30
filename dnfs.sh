@@ -14,12 +14,14 @@ sudo dnf install -y code 				                # vscode
 sudo dnf install -y evolution 				            # mail client
 sudo dnf install -y ffmpeg				                # AV transcoder
 sudo dnf install -y file-roller file-roller-nautilus 	# archive manager
+sudo dnf install -y gti 	                            # git launcher
 sudo dnf install -y java-latest-openjdk              	# java openjdk
 sudo dnf install -y latexmk                             # latex
 sudo dnf install -y neofetch                            # systeminfo
 sudo dnf install -y nodejs                              # nodejs
 sudo dnf install -y openssl                             # ssl
 sudo dnf install -y powerline vim-powerline             # powerline
+sudo dnf install -y seahorse                            # key manager
 sudo dnf install -y steam                               # steam
 sudo dnf install -y texlive                             # latex
 sudo dnf install -y texlive-collection-langgerman       # latex
