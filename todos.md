@@ -6,7 +6,9 @@
 - Whatsdesk
 - UxPlay
 
-## Please manually install desired OBS Plugins through the Gnome Software Application or via Flatpak commands
+## To Fix Nvidia Driver Performance on X11 (might not work properly)
+
+[How to Set Nvidia as Primary GPU on Optimus-based Laptops](https://docs.fedoraproject.org/en-US/quick-docs/how-to-set-nvidia-as-primary-gpu-on-optimus-based-laptops/)
 
 ## Please manually install some PWAs through Chrome/ Chromium/ Chromium Based Browser
 

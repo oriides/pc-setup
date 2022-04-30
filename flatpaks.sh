@@ -17,6 +17,7 @@ flatpak install -y org.gimp.GIMP
 flatpak install -y fr.handbrake.ghb
 flatpak install -y com.obsproject.Studio
 flatpak install -y org.onlyoffice.desktopeditors
+flatpak install -y com.parsecgaming.parsec
 flatpak install -y com.spotify.Client
 flatpak install -y com.github.taiko2k.tauonmb
 
