@@ -2,7 +2,7 @@
 <background>
 	<starttime>
 		<year>2018</year>
-		<month>1</month>
+		<month>7</month>
 		<day>1</day>
 		<hour>6</hour>
 		<minute>0</minute>
@@ -29,30 +29,30 @@
 		<duration>14400.0</duration>
 	</static>
 
-	<!-- It's 4 PM and it's going to start to get darker. This will transition for 2 hours up until 6 PM. -->
+	<!-- It's 4 PM and it's going to start to get darker. This will transition for 3 hours up until 7 PM. -->
 	<transition type="overlay">
-		<duration>7200.0</duration>
+		<duration>10800.0</duration>
 		<from>/usr/share/backgrounds/zelda/Zelda2.jpg</from>
 		<to>/usr/share/backgrounds/zelda/Zelda3.jpg</to>
 	</transition>
 
-	<!-- It's 6 PM, we're showing the sunset image in full force now, for 2 hours ending at 8 PM. -->
+	<!-- It's 7 PM, we're showing the sunset image in full force now, for 1 hours ending at 8 PM. -->
 	<static>
 		<file>/usr/share/backgrounds/zelda/Zelda3.jpg</file>
-		<duration>7200.0</duration>
+		<duration>3600.0</duration>
 	</static>
 
-	<!-- It's 8 PM and it's going to get even darker. This will transition for 3 hours up until 11 PM. -->
+	<!-- It's 8 PM and it's going to get even darker. This will transition for 2 hours up until 10 PM. -->
 	<transition type="overlay">
-		<duration>10800.0</duration>
+		<duration>7200.0</duration>
 		<from>/usr/share/backgrounds/zelda/Zelda3.jpg</from>
 		<to>/usr/share/backgrounds/zelda/Zelda4.jpg</to>
 	</transition>
 
-	<!-- It's 11 PM, we're showing the night image in full force now, for 5 hours ending at 4 AM. -->
+	<!-- It's 10 PM, we're showing the night image in full force now, for 6 hours ending at 4 AM. -->
 	<static>
 		<file>/usr/share/backgrounds/zelda/Zelda4.jpg</file>
-		<duration>18000.0</duration>
+		<duration>21600.0</duration>
 	</static>
 
 	<!-- Night starts to transition to Sunrise at 4 AM. The transition lasts for 2 hours, ending at 6 PM. -->

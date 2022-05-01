@@ -4,4 +4,4 @@ Terminal=false
 Type=Application
 Name=Google Sheets
 Exec=google-chrome https://docs.google.com/spreadsheets/u/0/
-Icon=/home/nikolai/Pictures/Downloads/Google_Sheets.max-2800x2800.png
+Icon=/home/nikolai/Pictures/Icons/Google_Sheets.png
