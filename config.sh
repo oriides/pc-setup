@@ -20,15 +20,6 @@ git config --global user.name $NAME
 git config --global user.email $EMAIL
 
 # ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-# set up various configurations ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-
-## sets up vim
-cp $(dirname $(readlink -f $0))/configs/.vimrc ~/
-
-## install .desktop files
-cp $(dirname $(readlink -f $0))/configs/desktop-files/* ~/.local/share/applications
-
-# ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 # install fonts ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
 ## Montserrat
@@ -72,10 +63,19 @@ sed -i 's,ZSH_THEME=.*,ZSH_THEME="powerlevel10k/powerlevel10k",g' ~/.zshrc
 sed -i 's,plugins=(git),plugins=(git docker docker-compose zsh-autosuggestions),g' ~/.zshrc
 
 # ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-# other ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+# set up various configurations ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+## sets up vim
+cp $(dirname $(readlink -f $0))/configs/.vimrc ~/
+
+## install .desktop files
+cp $(dirname $(readlink -f $0))/configs/desktop-files/* ~/.local/share/applications
 
 ## sets up cronjobs
 sudo cp $(dirname $(readlink -f $0))/configs/cronjobs/daily/* /etc/cron.daily/
+
+## sets up (dynamic) backgrounds
+sudo cp -r $(dirname $(readlink -f $0))/configs/backgrounds/zelda /usr/share/backgrounds/
 
 ## Place todo File in Home directory
 mv $(dirname $(readlink -f $0))/todos.md ~/
