@@ -3,8 +3,9 @@
 ## The Following Packages need to be manually installed
 
 - Veracrypt
-- Whatsdesk
+- Whatsapp
 - UxPlay
+- scrcpy
 
 ## To Fix Nvidia Driver Performance on X11 (might not work properly)
 

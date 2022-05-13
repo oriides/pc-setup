@@ -8,18 +8,18 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 # ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 # install packages –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
-flatpak install -y org.audacityteam.Audacity
-flatpak install -y com.bitwarden.desktop
-flatpak install -y com.discordapp.Discord
-flatpak install -y com.github.wwmm.easyeffects
-flatpak install -y com.github.tchx84.Flatseal
-flatpak install -y org.gimp.GIMP
-flatpak install -y fr.handbrake.ghb
-flatpak install -y com.obsproject.Studio
-flatpak install -y org.onlyoffice.desktopeditors
-flatpak install -y com.parsecgaming.parsec
-flatpak install -y com.spotify.Client
-flatpak install -y com.github.taiko2k.tauonmb
+flatpak install -y flathub org.audacityteam.Audacity
+flatpak install -y flathub com.bitwarden.desktop
+flatpak install -y flathub com.discordapp.Discord
+flatpak install -y flathub com.github.wwmm.easyeffects
+flatpak install -y flathub com.github.tchx84.Flatseal
+flatpak install -y flathub org.gimp.GIMP
+flatpak install -y flathub fr.handbrake.ghb
+flatpak install -y flathub com.obsproject.Studio
+flatpak install -y flathub org.onlyoffice.desktopeditors
+flatpak install -y flathub com.parsecgaming.parsec
+flatpak install -y flathub com.spotify.Client
+flatpak install -y flathub com.github.taiko2k.tauonmb
 
 # ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 

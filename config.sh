@@ -77,7 +77,7 @@ sudo cp $(dirname $(readlink -f $0))/configs/cronjobs/daily/* /etc/cron.daily/
 ## sets up (dynamic) backgrounds
 sudo cp -r $(dirname $(readlink -f $0))/configs/backgrounds/zelda /usr/share/backgrounds/
 
-## Place todo File in Home directory
+## place todo file in home directory
 mv $(dirname $(readlink -f $0))/todos.md ~/
 
 # ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
