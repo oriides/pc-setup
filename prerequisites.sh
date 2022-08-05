@@ -2,7 +2,7 @@
 
 # configure dnf
 sudo echo "fastestmirror=True" >> /etc/dnf/dnf.conf
-sudo echo "max_parallel_downloads=6" >> /etc/dnf/dnf.conf
+sudo echo "max_parallel_downloads=8" >> /etc/dnf/dnf.conf
 sudo echo "defaultyes=True" >> /etc/dnf/dnf.conf
 
 # update system
@@ -20,5 +20,5 @@ sudo dnf install lame\* --exclude=lame-devel
 sudo dnf group upgrade --with-optional Multimedia
 
 # install nvidia drivers
-sudo dnf install akmod-nvidia
-sudo dnf install xorg-x11-drv-nvidia-cuda
+#sudo dnf install akmod-nvidia
+#sudo dnf install xorg-x11-drv-nvidia-cuda
