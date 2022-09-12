@@ -12,8 +12,8 @@
 
 	<!-- We start with sunrise at 6 AM. It will remain up for 2 hours. -->
 	<static>
-		<file>/usr/share/backgrounds/zelda/Zelda1.jpg</file>
 		<duration>7200.0</duration>
+		<file>/usr/share/backgrounds/zelda/Zelda1.jpg</file>
 	</static>
 
 	<!-- Sunrise starts to transition to day at 8 AM. The transition lasts for 4 hours, ending at 12 PM. -->
@@ -25,8 +25,8 @@
 
 	<!-- It's 12 PM, we're showing the day image in full force now, for 5 hours ending at 5 PM. -->
 	<static>
-		<file>/usr/share/backgrounds/zelda/Zelda2.jpg</file>
 		<duration>18000.0</duration>
+		<file>/usr/share/backgrounds/zelda/Zelda2.jpg</file>
 	</static>
 
 	<!-- It's 5 PM and it's going to start to get darker. This will transition for 2 hours up until 7 PM. -->
@@ -38,8 +38,8 @@
 
 	<!-- It's 7 PM, we're showing the sunset image in full force now, for 1 hours ending at 8 PM. -->
 	<static>
-		<file>/usr/share/backgrounds/zelda/Zelda3.jpg</file>
 		<duration>3600.0</duration>
+		<file>/usr/share/backgrounds/zelda/Zelda3.jpg</file>
 	</static>
 
 	<!-- It's 8 PM and it's going to get even darker. This will transition for 1 hours up until 9 PM. -->
@@ -51,8 +51,8 @@
 
 	<!-- It's 9 PM, we're showing the night image in full force now, for 1 hours ending at 10 PM. -->
 	<static>
-		<file>/usr/share/backgrounds/zelda/Zelda4.jpg</file>
 		<duration>3600.0</duration>
+		<file>/usr/share/backgrounds/zelda/Zelda4.jpg</file>
 	</static>
 
 	<!-- It's 10 PM and it's going to get even darker. This will transition for 2 hours up until 12 AM. -->
@@ -64,8 +64,8 @@
 
 	<!-- It's 12 AM, we're showing the midnight image in full force now, for 3 hours ending at 3 AM. -->
 	<static>
-		<file>/usr/share/backgrounds/zelda/Zelda5.jpg</file>
 		<duration>10800.0</duration>
+		<file>/usr/share/backgrounds/zelda/Zelda5.jpg</file>
 	</static>
 
 	<!-- the night starts to get brighter again at 3 AM. The transition lasts for 1 hours, ending at 4 AM. -->
@@ -77,8 +77,8 @@
 
 	<!-- It's 4 AM, we're showing the night image in full force now, for 1 hours ending at 5 AM. -->
 	<static>
-		<file>/usr/share/backgrounds/zelda/Zelda4.jpg</file>
 		<duration>3600.0</duration>
+		<file>/usr/share/backgrounds/zelda/Zelda4.jpg</file>
 	</static>
 
 	<!-- Night starts to transition to Sunrise at 5 AM. The transition lasts for 1 hours, ending at 6 PM. -->

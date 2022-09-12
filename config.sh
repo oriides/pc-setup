@@ -73,9 +73,12 @@ cp $(dirname $(readlink -f $0))/configs/desktop-files/* ~/.local/share/applicati
 
 ## sets up cronjobs
 sudo cp $(dirname $(readlink -f $0))/configs/cronjobs/daily/* /etc/cron.daily/
+sudo chown -R root:root /etc/cron.daily
 
 ## sets up (dynamic) backgrounds
 sudo cp -r $(dirname $(readlink -f $0))/configs/backgrounds/zelda /usr/share/backgrounds/
+sudo cp -r $(dirname $(readlink -f $0))/configs/backgrounds/fantasy /usr/share/backgrounds/
+sudo chown -R root:root /usr/share/backgrounds
 
 ## place todo file in home directory
 mv $(dirname $(readlink -f $0))/todos.md ~/
