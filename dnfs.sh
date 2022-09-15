@@ -23,7 +23,6 @@ sudo dnf install -y nodejs                              # nodejs
 sudo dnf install -y openssl                             # ssl
 sudo dnf install -y powerline vim-powerline             # powerline
 sudo dnf install -y seahorse                            # key manager
-sudo dnf install -y steam                               # steam
 sudo dnf install -y texlive                             # latex
 sudo dnf install -y texlive-collection-langgerman       # latex
 sudo dnf install -y texlive-collection-latexextra       # latex

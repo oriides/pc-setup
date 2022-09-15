@@ -16,9 +16,12 @@ flatpak install -y flathub com.github.tchx84.Flatseal
 flatpak install -y flathub org.gimp.GIMP
 flatpak install -y flathub fr.handbrake.ghb
 flatpak install -y flathub com.obsproject.Studio
+flatpak install -y flathub com.obsproject.Studio.Plugin.Gstreamer
+flatpak install -y flathub com.obsproject.Studio.Plugin.MoveTransition
 flatpak install -y flathub org.onlyoffice.desktopeditors
 flatpak install -y flathub com.parsecgaming.parsec
-flatpak install -y flathub com.spotify.Client
+flatpak install -y flathub com.valvesoftware.Steam
+flatpak install -y flathub com.valvesoftware.Steam.CompatibilityTool.Proton-GE
 flatpak install -y flathub com.github.taiko2k.tauonmb
 
 # ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
