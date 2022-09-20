@@ -1,5 +1,13 @@
 #!/bin/bash
 
+if (( $EUID == 0 )); then
+    echo "Don't run as root"
+    exit
+fi
+
+# –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+# configure fedora dnf ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
 # configure dnf
 sudo echo "fastestmirror=True" >> /etc/dnf/dnf.conf
 sudo echo "max_parallel_downloads=8" >> /etc/dnf/dnf.conf

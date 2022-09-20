@@ -1,7 +1,12 @@
 #!/bin/bash
 
-# ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-# configure git ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+if (( $EUID == 0 )); then
+    echo "Don't run as root"
+    exit
+fi
+
+# –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+# configure git –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
 ## git user.name
 if ! NAME=$(zenity --entry --title "GIT User Name" --text "Please enter your name (Firstname Lastname):"); then
@@ -19,8 +24,8 @@ fi
 git config --global user.name $NAME
 git config --global user.email $EMAIL
 
-# ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-# install fonts ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+# –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+# install fonts –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
 ## Montserrat
 wget -O Montserrat.zip https://fonts.google.com/download\?family\=Montserrat
@@ -46,8 +51,8 @@ sudo chown -R root:root MesloLGS-NF
 sudo mv MesloLGS-NF /usr/share/fonts/truetype/
 fc-cache -vf
 
-# ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-# configure zsh ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+# –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+# configure zsh –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
 ## install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -62,8 +67,8 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 sed -i 's,ZSH_THEME=.*,ZSH_THEME="powerlevel10k/powerlevel10k",g' ~/.zshrc
 sed -i 's,plugins=(git),plugins=(git docker docker-compose zsh-autosuggestions),g' ~/.zshrc
 
-# ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-# set up various configurations ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+# –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+# set up various configurations –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
 ## sets up vim
 cp $(dirname $(readlink -f $0))/configs/.vimrc ~/
@@ -83,7 +88,7 @@ sudo chown -R root:root /usr/share/backgrounds
 ## place todo file in home directory
 mv $(dirname $(readlink -f $0))/todos.md ~/
 
-# ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+# –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
 notify-send -i dialog-information "config Script" "Please reboot to apply all changes and consult the todo file in your Home Directory"
 

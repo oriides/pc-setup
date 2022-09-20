@@ -1,12 +1,17 @@
 #!/bin/bash
 
-# ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-# setup flathub ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+if (( $EUID == 0 )); then
+    echo "Don't run as root"
+    exit
+fi
+
+# –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+# setup flathub –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-# ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-# install packages –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+# –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+# install packages ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
 flatpak install -y flathub io.bassi.Amberol
 flatpak install -y flathub org.audacityteam.Audacity
@@ -29,9 +34,9 @@ flatpak install -y flathub org.onlyoffice.desktopeditors
 flatpak install -y flathub com.parsecgaming.parsec
 flatpak install -y flathub com.valvesoftware.Steam
 flatpak install -y flathub com.valvesoftware.Steam.CompatibilityTool.Proton-GE
-flatpak install -y flathub com.github.taiko2k.tauonmb
+# flatpak install -y flathub com.github.taiko2k.tauonmb
 
-# ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+# –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
 clear
 notify-send -i emblem-default "flatpaks Script" "Done!"
