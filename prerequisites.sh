@@ -18,7 +18,3 @@ sudo dnf install \
 sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel
 sudo dnf install lame\* --exclude=lame-devel
 sudo dnf group upgrade --with-optional Multimedia
-
-# install nvidia drivers
-#sudo dnf install akmod-nvidia
-#sudo dnf install xorg-x11-drv-nvidia-cuda

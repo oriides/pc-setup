@@ -8,13 +8,20 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 # ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 # install packages –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
+flatpak install -y flathub io.bassi.Amberol
 flatpak install -y flathub org.audacityteam.Audacity
 flatpak install -y flathub com.bitwarden.desktop
+flatpak install -y flathub com.github.rafostar.Clapper
+flatpak install -y flathub ca.desrt.dconf-editor
 flatpak install -y flathub com.discordapp.Discord
+flatpak install -y flathub me.dusansimic.DynamicWallpaper
 flatpak install -y flathub com.github.wwmm.easyeffects
+flatpak install -y flathub com.mattjakeman.ExtensionManager
+flatpak install -y flathub org.gnome.Firmware
 flatpak install -y flathub com.github.tchx84.Flatseal
 flatpak install -y flathub org.gimp.GIMP
 flatpak install -y flathub fr.handbrake.ghb
+flatpak install -y flathub org.gnome.PowerStats
 flatpak install -y flathub com.obsproject.Studio
 flatpak install -y flathub com.obsproject.Studio.Plugin.Gstreamer
 flatpak install -y flathub com.obsproject.Studio.Plugin.MoveTransition

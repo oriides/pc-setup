@@ -2,14 +2,11 @@
 
 ## The Following Packages need to be manually installed
 
+- Vivaldi
 - Veracrypt
 - Whatsapp
 - UxPlay
 - scrcpy
-
-## To Fix Nvidia Driver Performance on X11 (might not work properly)
-
-[How to Set Nvidia as Primary GPU on Optimus-based Laptops](https://docs.fedoraproject.org/en-US/quick-docs/how-to-set-nvidia-as-primary-gpu-on-optimus-based-laptops/)
 
 ## Please manually install some PWAs through Chrome/ Chromium/ Chromium Based Browser
 

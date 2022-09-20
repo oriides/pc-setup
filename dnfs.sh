@@ -14,6 +14,8 @@ sudo dnf install -y code 				                # vscode
 sudo dnf install -y evolution 				            # mail client
 sudo dnf install -y ffmpeg				                # AV transcoder
 sudo dnf install -y file-roller file-roller-nautilus 	# archive manager
+sudo dnf install -y gnome-tweaks                        # gnome tweaks
+sudo dnf install -y google-chrome-stable                # Google Chrome
 sudo dnf install -y gti 	                            # git launcher
 sudo dnf install -y java-latest-openjdk              	# java openjdk
 sudo dnf install -y latexmk                             # latex
