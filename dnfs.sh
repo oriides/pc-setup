@@ -33,6 +33,7 @@ sudo dnf install -y seahorse                            # key manager
 sudo dnf install -y texlive                             # latex
 sudo dnf install -y texlive-collection-langgerman       # latex
 sudo dnf install -y texlive-collection-latexextra       # latex
+sudo dnf install -y texlive-latexindent                 # latex
 sudo dnf install -y translate-shell                     # Ulanucher Translate dependency
 sudo dnf install -y ulauncher                           # application launcher
 sudo dnf install -y zsh                                 # zsh
