@@ -10,10 +10,11 @@
 
 ## Please manually install some PWAs through Chrome/ Chromium/ Chromium Based Browser
 
-- ARD Mediathek
-- Google Drive
-- Stadia
 - YouTube Music
+- Google Drive
+- Google Photos
+- ARD Mediathek
+- Stadia
 
 ## Please manually install desired Ulauncher Extensions
 

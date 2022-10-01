@@ -26,6 +26,7 @@ flatpak install -y flathub org.gnome.Firmware
 flatpak install -y flathub com.github.tchx84.Flatseal
 flatpak install -y flathub org.gimp.GIMP
 flatpak install -y flathub fr.handbrake.ghb
+flatpak install -y flathub fr.handbrake.ghb.Plugin.IntelMediaSDK
 flatpak install -y flathub org.gnome.PowerStats
 flatpak install -y flathub com.obsproject.Studio
 flatpak install -y flathub com.obsproject.Studio.Plugin.Gstreamer
