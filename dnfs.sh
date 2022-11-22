@@ -15,8 +15,8 @@ dnf check-update
 # –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 # install packages ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
-sudo dnf install -y code 				                # vscode
-sudo dnf install -y evolution 				            # mail client
+sudo dnf install -y code 				                # Visual Studio Code
+sudo dnf install -y evolution 				            # Evolution Mail Client
 sudo dnf install -y ffmpeg				                # AV transcoder
 sudo dnf install -y file-roller file-roller-nautilus 	# archive manager
 sudo dnf install -y gnome-tweaks                        # gnome tweaks
@@ -40,8 +40,6 @@ sudo dnf install -y texlive                             # latex
 sudo dnf install -y texlive-collection-langgerman       # latex
 sudo dnf install -y texlive-collection-latexextra       # latex
 sudo dnf install -y texlive-latexindent                 # latex
-sudo dnf install -y translate-shell                     # Ulanucher Translate dependency
-sudo dnf install -y ulauncher                           # application launcher
 sudo dnf install -y zsh                                 # zsh
 
 # –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––

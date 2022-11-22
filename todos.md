@@ -4,7 +4,6 @@
 
 - Vivaldi
 - Veracrypt
-- Whatsapp
 - UxPlay
 - scrcpy
 
@@ -14,10 +13,6 @@
 - Google Drive
 - Google Photos
 - ARD Mediathek
-- Stadia
-
-## Please manually install desired Ulauncher Extensions
-
-- [Process Murderer](https://ext.ulauncher.io/-/github-isacikgoz-ukill) `https://github.com/isacikgoz/ukill`
-- [Translate](https://ext.ulauncher.io/-/github-nastuzzisamy-ulauncher-translate) `https://github.com/NastuzziSamy/ulauncher-translate`
-- [openthesaurus.de](https://ext.ulauncher.io/-/github-behrensger-thesaurus_cc_ulauncher) `https://github.com/behrensger/thesaurus_cc_ulauncher`
+- Google Messages
+- Google News
+- Diagrams.net

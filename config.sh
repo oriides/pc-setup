@@ -63,14 +63,13 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 ## zsh autosuggestions
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
-## modify .zshrc to enable theme and plugins
-sed -i 's,ZSH_THEME=.*,ZSH_THEME="powerlevel10k/powerlevel10k",g' ~/.zshrc
-sed -i 's,plugins=(git),plugins=(git docker docker-compose zsh-autosuggestions),g' ~/.zshrc
+## sets up my .zshrc
+cp $(dirname $(readlink -f $0))/configs/.zshrc ~/
 
 # –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 # set up various configurations –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
-## sets up vim
+## sets up my .vimrc
 cp $(dirname $(readlink -f $0))/configs/.vimrc ~/
 
 ## install .desktop files
