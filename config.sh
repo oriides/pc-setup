@@ -78,6 +78,8 @@ cp $(dirname $(readlink -f $0))/configs/desktop-files/* ~/.local/share/applicati
 ## sets up cronjobs
 sudo cp $(dirname $(readlink -f $0))/configs/cronjobs/daily/* /etc/cron.daily/
 sudo chown -R root:root /etc/cron.daily
+sudo systemctl enable crond.service
+sudo systemctl start crond.service
 
 ## sets up (dynamic) backgrounds
 sudo cp -r $(dirname $(readlink -f $0))/configs/backgrounds/zelda /usr/share/backgrounds/

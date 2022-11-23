@@ -16,6 +16,7 @@ dnf check-update
 # install packages ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
 sudo dnf install -y code 				                # Visual Studio Code
+sudo dnf install -y cronie 				                # crond
 sudo dnf install -y evolution 				            # Evolution Mail Client
 sudo dnf install -y ffmpeg				                # AV transcoder
 sudo dnf install -y file-roller file-roller-nautilus 	# archive manager
