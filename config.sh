@@ -67,6 +67,31 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 cp $(dirname $(readlink -f $0))/configs/.zshrc ~/
 
 # –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+# configure docker & kubernetes –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+## add user to docker group
+sudo groupadd docker
+sudo usermod -aG docker $USER
+
+## enable and start docker service
+sudo systemctl enable docker
+sudo systemctl enable containerd
+sudo systemctl start docker
+
+## enable kubelet service
+sudo systemctl enable kubelet
+
+## install minikube
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-latest.x86_64.rpm
+sudo rpm -Uvh minikube-latest.x86_64.rpm
+
+## minikube btrfs workaround (https://github.com/kubernetes/minikube/issues/9982)
+sudo usermod -aG libvirt $USER
+sudo systemctl start libvirtd
+sudo systemctl enable libvirtd
+minikube config set driver kvm2
+
+# –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 # set up various configurations –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
 ## sets up my .vimrc
@@ -92,7 +117,6 @@ mv $(dirname $(readlink -f $0))/todos.md ~/
 ## vulkan fixes
 echo "export LIBVA_DRIVER_NAME=iHD" >> ~/.zshrc
 echo "export VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/intel_icd.x86_64.json" >> ~/.zshrc
-
 
 # –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
