@@ -85,11 +85,16 @@ sudo systemctl enable kubelet
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-latest.x86_64.rpm
 sudo rpm -Uvh minikube-latest.x86_64.rpm
 
+## configure minikube
+minikube config set driver podman
+minikube config set rootless true
+
 ## minikube btrfs workaround (https://github.com/kubernetes/minikube/issues/9982)
-sudo usermod -aG libvirt $USER
-sudo systemctl start libvirtd
-sudo systemctl enable libvirtd
-minikube config set driver kvm2
+# sudo usermod -aG libvirt $USER
+# sudo systemctl start libvirtd
+# sudo systemctl enable libvirtd
+# minikube config set rootless false
+# minikube config set driver kvm2
 
 # –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 # set up various configurations –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
