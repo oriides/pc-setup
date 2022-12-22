@@ -15,6 +15,7 @@ source $HOME/.cargo/env
 # –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 # install crates ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
+cargo install cargo-update  # package updater
 cargo install bottom        # better cli system monitor
 cargo install https         # simple basic webserver
 cargo install tokei         # folder file analyzer
