@@ -114,6 +114,7 @@ sudo systemctl start crond.service
 ## sets up (dynamic) backgrounds
 sudo cp -r $(dirname $(readlink -f $0))/configs/backgrounds/zelda /usr/share/backgrounds/
 sudo cp -r $(dirname $(readlink -f $0))/configs/backgrounds/fantasy /usr/share/backgrounds/
+sudo cp -r $(dirname $(readlink -f $0))/configs/backgrounds/desert /usr/share/backgrounds/
 sudo chown -R root:root /usr/share/backgrounds
 
 ## place todo file in home directory
