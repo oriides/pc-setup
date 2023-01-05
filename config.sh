@@ -133,9 +133,7 @@ sudo cp -r $(dirname $(readlink -f $0))/configs/backgrounds/fantasy/fantasy/ /us
 sudo cp -r $(dirname $(readlink -f $0))/configs/backgrounds/desert/desert/ /usr/share/backgrounds/
 sudo chown -R root:root /usr/share/backgrounds
 sudo cp -r $(dirname $(readlink -f $0))/configs/backgrounds/zelda/zelda.xml /usr/share/gnome-background-properties/
-sudo cp -r $(dirname $(readlink -f $0))/configs/backgrounds/zelda/zelda-slideshow.xml /usr/share/gnome-background-properties/
 sudo cp -r $(dirname $(readlink -f $0))/configs/backgrounds/fantasy/fantasy.xml /usr/share/gnome-background-properties/
-sudo cp -r $(dirname $(readlink -f $0))/configs/backgrounds/fantasy/fantasy-slideshow.xml /usr/share/gnome-background-properties/
 sudo cp -r $(dirname $(readlink -f $0))/configs/backgrounds/desert/desert.xml /usr/share/gnome-background-properties/
 sudo chown -R root:root /usr/share/gnome-background-properties
 
