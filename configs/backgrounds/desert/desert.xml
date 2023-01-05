@@ -2,7 +2,7 @@
 <!DOCTYPE wallpapers SYSTEM "gnome-wp-list.dtd">
 <wallpapers>
     <wallpaper deleted="false">
-        <name>desert</name>
+        <name>00 desert</name>
         <filename>/usr/share/backgrounds/desert/day.jpg</filename>
         <filename-dark>/usr/share/backgrounds/desert/night.jpg</filename-dark>
         <options>zoom</options>

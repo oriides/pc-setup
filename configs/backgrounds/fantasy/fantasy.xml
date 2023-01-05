@@ -2,7 +2,7 @@
 <!DOCTYPE wallpapers SYSTEM "gnome-wp-list.dtd">
 <wallpapers>
     <wallpaper deleted="false">
-        <name>fantasy</name>
+        <name>00 fantasy</name>
         <filename>/usr/share/backgrounds/fantasy/day.png</filename>
         <filename-dark>/usr/share/backgrounds/fantasy/evening.png</filename-dark>
         <options>zoom</options>
@@ -10,4 +10,11 @@
         <pcolor>#3465a4</pcolor>
         <scolor>#000000</scolor>
     </wallpaper>
+
+    <wallpaper deleted="false">
+        <name>00 Fantasy Time of Day</name>
+        <filename>/usr/share/backgrounds/fantasy/fantasy.xml</filename>
+        <options>zoom</options>
+    </wallpaper>
+
 </wallpapers>
