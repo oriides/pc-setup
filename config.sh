@@ -27,19 +27,33 @@ git config --global user.email $EMAIL
 # –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 # install fonts –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
-## Montserrat
-wget -O Montserrat.zip https://fonts.google.com/download\?family\=Montserrat
-unzip Montserrat.zip -d Montserrat
-sudo chown -R root:root Montserrat
-sudo mv Montserrat /usr/share/fonts/truetype/
-fc-cache -vf
-
 ## Powerline Symbols
 wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
 wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
 mv PowerlineSymbols.otf /usr/share/fonts/
 fc-cache -vf /usr/share/fonts/
 mv 10-powerline-symbols.conf /etc/fonts/conf.d/
+
+## Montserrat
+wget -O Montserrat.zip https://fonts.google.com/download\?family\=Montserrat
+unzip Montserrat.zip -d Montserrat
+rm -r Montserrat/static
+sudo chown -R root:root Montserrat
+sudo mv Montserrat /usr/share/fonts/
+
+## Lexend
+wget -O Lexend.zip https://fonts.google.com/download\?family\=Lexend
+unzip Lexend.zip -d Lexend
+rm -r Lexend/static
+sudo chown -R root:root Lexend
+sudo mv Lexend /usr/share/fonts/
+
+## Space Grotesk
+wget -O Space\ Grotesk.zip https://fonts.google.com/download\?family\=Space\ Grotesk
+unzip Space\ Grotesk.zip -d Space\ Grotesk
+rm -r Space\ Grotesk/static
+sudo chown -R root:root Space\ Grotesk
+sudo mv Space\ Grotesk /usr/share/fonts/
 
 ## Meslo Nerd Font (for Powerlevel10k)
 mkdir MesloLGS-NF
@@ -48,7 +62,9 @@ wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20B
 wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf -O MesloLGS-NF/MesloLGS-NF-Italic.ttf
 wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf -O MesloLGS-NF/MesloLGS-NF-Bold-Italic.ttf
 sudo chown -R root:root MesloLGS-NF
-sudo mv MesloLGS-NF /usr/share/fonts/truetype/
+sudo mv MesloLGS-NF /usr/share/fonts/
+
+## reload font cache
 fc-cache -vf
 
 # –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -112,10 +128,17 @@ sudo systemctl enable crond.service
 sudo systemctl start crond.service
 
 ## sets up (dynamic) backgrounds
-sudo cp -r $(dirname $(readlink -f $0))/configs/backgrounds/zelda /usr/share/backgrounds/
-sudo cp -r $(dirname $(readlink -f $0))/configs/backgrounds/fantasy /usr/share/backgrounds/
-sudo cp -r $(dirname $(readlink -f $0))/configs/backgrounds/desert /usr/share/backgrounds/
+sudo cp -r $(dirname $(readlink -f $0))/configs/backgrounds/zelda/zelda/ /usr/share/backgrounds/
+sudo cp -r $(dirname $(readlink -f $0))/configs/backgrounds/fantasy/fantasy/ /usr/share/backgrounds/
+sudo cp -r $(dirname $(readlink -f $0))/configs/backgrounds/desert/desert/ /usr/share/backgrounds/
 sudo chown -R root:root /usr/share/backgrounds
+sudo cp -r $(dirname $(readlink -f $0))/configs/backgrounds/zelda/zelda.xml /usr/share/gnome-background-properties/
+sudo cp -r $(dirname $(readlink -f $0))/configs/backgrounds/zelda/zelda-slideshow.xml /usr/share/gnome-background-properties/
+sudo cp -r $(dirname $(readlink -f $0))/configs/backgrounds/fantasy/fantasy.xml /usr/share/gnome-background-properties/
+sudo cp -r $(dirname $(readlink -f $0))/configs/backgrounds/fantasy/fantasy-slideshow.xml /usr/share/gnome-background-properties/
+sudo cp -r $(dirname $(readlink -f $0))/configs/backgrounds/desert/desert.xml /usr/share/gnome-background-properties/
+sudo chown -R root:root /usr/share/gnome-background-properties
+
 
 ## place todo file in home directory
 mv $(dirname $(readlink -f $0))/todos.md ~/
