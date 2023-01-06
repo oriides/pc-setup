@@ -1,5 +1,7 @@
 # There are still things that need to be done
 
+Compile and install torchlight
+
 ## The Following Packages need to be manually installed
 
 - Vivaldi
