@@ -20,7 +20,7 @@ flatpak install -y flathub org.blender.Blender                          # Blende
 flatpak install -y flathub com.usebottles.bottles                       # Bottles
 flatpak install -y flathub com.github.rafostar.Clapper                  # Clapper
 flatpak install -y flathub ca.desrt.dconf-editor                        # dconf Editor
-flatpak install -y flathub com.discordapp.Discord                       # Discord
+# flatpak install -y flathub com.discordapp.Discord                       # Discord
 flatpak install -y flathub me.dusansimic.DynamicWallpaper               # Dynamic Wallpaper Generator
 flatpak install -y flathub com.github.wwmm.easyeffects                  # Easy Effects
 flatpak install -y flathub com.mattjakeman.ExtensionManager             # Extension Manager

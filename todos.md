@@ -18,3 +18,4 @@ Compile and install torchlight
 - Google Messages
 - Google News
 - Diagrams.net
+- Discord
