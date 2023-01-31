@@ -55,6 +55,11 @@ sudo dnf install -y zsh                                     # zsh
 sudo dnf install -y @virtualization                         # supplementary virtualization programs
 
 # –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+# required dependencies –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+sudo dnf install -y libgda libgda-sqlite                    # for Pano Clipboard Manager
+
+# –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
 clear
 notify-send -i emblem-default "dnf Script" "Done!"
