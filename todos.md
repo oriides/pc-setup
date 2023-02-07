@@ -10,6 +10,7 @@ Compile and install torchlight
 - Veracrypt
 - UxPlay
 - scrcpy
+- Insync
 
 ## Please manually install some PWAs through Chrome/ Chromium/ Chromium Based Browser
 
