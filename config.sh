@@ -55,6 +55,12 @@ rm -r Space\ Grotesk/static
 sudo chown -R root:root Space\ Grotesk
 sudo mv Space\ Grotesk /usr/share/fonts/
 
+## Space Mono
+wget -O Space\ Mono.zip https://fonts.google.com/download\?family\=Space\ Mono
+unzip Space\ Mono.zip -d Space\ Mono
+sudo chown -R root:root Space\ Mono
+sudo mv Space\ Mono /usr/share/fonts/
+
 ## Meslo Nerd Font (for Powerlevel10k)
 mkdir MesloLGS-NF
 wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf -O MesloLGS-NF/MesloLGS-NF-Regular.ttf
