@@ -14,7 +14,7 @@ sudo echo "max_parallel_downloads=8" >> /etc/dnf/dnf.conf
 sudo echo "defaultyes=True" >> /etc/dnf/dnf.conf
 
 # update system
-sudo dnf update
+sudo dnf update -y
 
 # enable rpm fusion
 sudo dnf install \
