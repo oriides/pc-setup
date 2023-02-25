@@ -147,10 +147,6 @@ sudo chown -R root:root /usr/share/gnome-background-properties
 ## place todo file in home directory
 mv $(dirname $(readlink -f $0))/todos.md ~/
 
-## vulkan fixes for intel graphics
-echo "export LIBVA_DRIVER_NAME=iHD" >> ~/.zshrc
-echo "export VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/intel_icd.x86_64.json" >> ~/.zshrc
-
 # –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
 notify-send -i dialog-information "config Script" "Please reboot to apply all changes and consult the todo file in your Home Directory"

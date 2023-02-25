@@ -11,10 +11,11 @@ export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-plugins=(git docker docker-compose zsh-autosuggestions)
+plugins=(git docker docker-compose kubectl zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 ############### system configs #################################################
@@ -24,3 +25,7 @@ export LIBVA_DRIVER_NAME=iHD
 export VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/intel_icd.x86_64.json
 
 ############### user configs ###################################################
+
+alias dcd="docker compose down"
+alias dcu="docker compose up -d --build"
+alias dcr="docker compose down && docker compose up -d --build"
