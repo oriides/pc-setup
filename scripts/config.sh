@@ -86,7 +86,7 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 ## sets up my .zshrc
-cp $(dirname $(readlink -f $0))/../configs/.zshrc ~/
+cp $(dirname $(readlink -f $0))/../configs/.zshrc ~/.zshrc
 
 # –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 # configure docker & kubernetes –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -122,10 +122,13 @@ minikube config set rootless true
 # set up various configurations –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
 ## sets up my .vimrc
-cp $(dirname $(readlink -f $0))/../configs/.vimrc ~/
+cp $(dirname $(readlink -f $0))/../configs/.vimrc ~/.vimrc
 
 ## install .desktop files
-cp $(dirname $(readlink -f $0))/../configs/desktop-files/* ~/.local/share/applications
+cp $(dirname $(readlink -f $0))/../configs/desktop-files/* ~/.local/share/applications/
+
+## sets up user configurations (in ~/.config)
+cp -r $(dirname $(readlink -f $0))/../configs/user-configs/* ~/.config/
 
 ## sets up cronjobs
 sudo cp $(dirname $(readlink -f $0))/../configs/cronjobs/daily/* /etc/cron.daily/
