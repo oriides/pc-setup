@@ -38,6 +38,7 @@ sudo dnf install -y java-latest-openjdk                     # java openjdk
 sudo dnf install -y kubernetes                              # kubernetes
 sudo dnf install -y kompose                                 # docker compose to kubernetes converter
 sudo dnf install -y latexmk                                 # latex
+sudo dnf install -y libgda libgda-sqlite                    # deps for Pano Clipboard Manager
 sudo dnf install -y libheif                                 # HEIC/HEIF support
 sudo dnf install -y libva libva-utils                       # Video Acceleration (VAAPI)
 sudo dnf install -y mesa-dri-drivers                        # Mesa-based DRI drivers
@@ -47,17 +48,13 @@ sudo dnf install -y nodejs                                  # nodejs
 sudo dnf install -y openssl                                 # ssl
 sudo dnf install -y powerline vim-powerline                 # powerline
 sudo dnf install -y seahorse                                # key manager
+sudo dnf install -y solaar                                  # logitech peripheral manager
 sudo dnf install -y texlive                                 # latex
 sudo dnf install -y texlive-collection-langgerman           # latex
 sudo dnf install -y texlive-collection-latexextra           # latex
 sudo dnf install -y texlive-latexindent                     # latex
 sudo dnf install -y zsh                                     # zsh
 sudo dnf install -y @virtualization                         # supplementary virtualization programs
-
-# –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-# required dependencies –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-
-sudo dnf install -y libgda libgda-sqlite                    # for Pano Clipboard Manager
 
 # –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
