@@ -22,6 +22,4 @@ cargo install tokei         # folder file analyzer
 
 # –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
-clear
-notify-send -i emblem-default "cargo Script" "Done!"
-echo "Done!"
+echo "cargo script done!"

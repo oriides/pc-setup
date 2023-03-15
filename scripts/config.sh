@@ -86,7 +86,7 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 ## sets up my .zshrc
-cp $(dirname $(readlink -f $0))/configs/.zshrc ~/
+cp $(dirname $(readlink -f $0))/../configs/.zshrc ~/
 
 # –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 # configure docker & kubernetes –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -122,34 +122,33 @@ minikube config set rootless true
 # set up various configurations –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
 ## sets up my .vimrc
-cp $(dirname $(readlink -f $0))/configs/.vimrc ~/
+cp $(dirname $(readlink -f $0))/../configs/.vimrc ~/
 
 ## install .desktop files
-cp $(dirname $(readlink -f $0))/configs/desktop-files/* ~/.local/share/applications
+cp $(dirname $(readlink -f $0))/../configs/desktop-files/* ~/.local/share/applications
 
 ## sets up cronjobs
-sudo cp $(dirname $(readlink -f $0))/configs/cronjobs/daily/* /etc/cron.daily/
+sudo cp $(dirname $(readlink -f $0))/../configs/cronjobs/daily/* /etc/cron.daily/
 sudo chown -R root:root /etc/cron.daily
 sudo systemctl enable crond.service
 sudo systemctl start crond.service
 
 ## sets up (dynamic) backgrounds
-sudo cp -r $(dirname $(readlink -f $0))/configs/backgrounds/zelda/zelda/ /usr/share/backgrounds/
-sudo cp -r $(dirname $(readlink -f $0))/configs/backgrounds/fantasy/fantasy/ /usr/share/backgrounds/
-sudo cp -r $(dirname $(readlink -f $0))/configs/backgrounds/desert/desert/ /usr/share/backgrounds/
+sudo cp -r $(dirname $(readlink -f $0))/../configs/backgrounds/zelda/zelda/ /usr/share/backgrounds/
+sudo cp -r $(dirname $(readlink -f $0))/../configs/backgrounds/fantasy/fantasy/ /usr/share/backgrounds/
+sudo cp -r $(dirname $(readlink -f $0))/../configs/backgrounds/desert/desert/ /usr/share/backgrounds/
 sudo chown -R root:root /usr/share/backgrounds
-sudo cp -r $(dirname $(readlink -f $0))/configs/backgrounds/zelda/zelda.xml /usr/share/gnome-background-properties/
-sudo cp -r $(dirname $(readlink -f $0))/configs/backgrounds/fantasy/fantasy.xml /usr/share/gnome-background-properties/
-sudo cp -r $(dirname $(readlink -f $0))/configs/backgrounds/desert/desert.xml /usr/share/gnome-background-properties/
+sudo cp -r $(dirname $(readlink -f $0))/../configs/backgrounds/zelda/zelda.xml /usr/share/gnome-background-properties/
+sudo cp -r $(dirname $(readlink -f $0))/../configs/backgrounds/fantasy/fantasy.xml /usr/share/gnome-background-properties/
+sudo cp -r $(dirname $(readlink -f $0))/../configs/backgrounds/desert/desert.xml /usr/share/gnome-background-properties/
 sudo chown -R root:root /usr/share/gnome-background-properties
-
-
-## place todo file in home directory
-mv $(dirname $(readlink -f $0))/todos.md ~/
 
 # –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
-notify-send -i dialog-information "config Script" "Please reboot to apply all changes and consult the todo file in your Home Directory"
+## place todo file in home directory
+cp $(dirname $(readlink -f $0))/../todos.md ~/todos.md
+
+# –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
 clear
 notify-send -i emblem-default "config Script" "Done!"
