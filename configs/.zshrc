@@ -22,7 +22,7 @@ source $ZSH/oh-my-zsh.sh
 
 # vulkan fixes
 export LIBVA_DRIVER_NAME=iHD
-export VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/intel_icd.x86_64.json
+# export VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/intel_icd.x86_64.json
 
 ############### user configs ###################################################
 

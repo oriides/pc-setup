@@ -42,6 +42,8 @@ sudo dnf install -y libgda libgda-sqlite                    # deps for Pano Clip
 sudo dnf install -y libheif                                 # HEIC/HEIF support
 sudo dnf install -y libva libva-utils                       # Video Acceleration (VAAPI)
 sudo dnf install -y mesa-dri-drivers                        # Mesa-based DRI drivers
+sudo dnf install -y mesa-va-drivers                         # Mesa-based VAAPI drivers
+sudo dnf install -y mesa-vdpau-drivers                      # Mesa-based VDPAU drivers
 sudo dnf install -y mesa-vulkan-drivers                     # Mesa Vulkan drivers
 sudo dnf install -y neofetch                                # systeminfo
 sudo dnf install -y nodejs                                  # nodejs
