@@ -152,7 +152,3 @@ sudo chown -R root:root /usr/share/gnome-background-properties
 cp $(dirname $(readlink -f $0))/../todos.md ~/todos.md
 
 # –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-
-clear
-notify-send -i emblem-default "config Script" "Done!"
-echo "Done!"

@@ -47,7 +47,7 @@ sudo dnf install -y mesa-vdpau-drivers                      # Mesa-based VDPAU d
 sudo dnf install -y mesa-vulkan-drivers                     # Mesa Vulkan drivers
 sudo dnf install -y neofetch                                # systeminfo
 sudo dnf install -y nodejs                                  # nodejs
-sudo dnf install -y openssl                                 # ssl
+sudo dnf install -y openssl openssl-devel                   # ssl
 sudo dnf install -y powerline vim-powerline                 # powerline
 sudo dnf install -y seahorse                                # key manager
 sudo dnf install -y solaar                                  # logitech peripheral manager
@@ -57,9 +57,6 @@ sudo dnf install -y texlive-collection-latexextra           # latex
 sudo dnf install -y texlive-latexindent                     # latex
 sudo dnf install -y zsh                                     # zsh
 sudo dnf install -y @virtualization                         # supplementary virtualization programs
+sudo dnf install -y @c-development                          # c development dependencies (required for rust)
 
 # –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-
-clear
-notify-send -i emblem-default "dnf Script" "Done!"
-echo "Done!"

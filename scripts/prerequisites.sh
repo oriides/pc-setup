@@ -9,9 +9,9 @@ fi
 # configure fedora dnf ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
 # configure dnf
-sudo echo "fastestmirror=True" >> /etc/dnf/dnf.conf
-sudo echo "max_parallel_downloads=8" >> /etc/dnf/dnf.conf
-sudo echo "defaultyes=True" >> /etc/dnf/dnf.conf
+echo "fastestmirror=True" | sudo tee -a /etc/dnf/dnf.conf
+echo "max_parallel_downloads=8" | sudo tee -a /etc/dnf/dnf.conf
+echo "defaultyes=True" | sudo tee -a /etc/dnf/dnf.conf
 
 # update system
 sudo dnf update -y

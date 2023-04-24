@@ -46,7 +46,3 @@ flatpak install -y flathub org.videolan.VLC                             # VLC
 flatpak install -y flathub io.github.mimbrero.WhatsAppDesktop           # WhatsApp
 
 # –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-
-clear
-notify-send -i emblem-default "flatpaks Script" "Done!"
-echo "Done!"

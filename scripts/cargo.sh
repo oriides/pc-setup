@@ -21,5 +21,3 @@ cargo install https         # simple basic webserver
 cargo install tokei         # folder file analyzer
 
 # –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-
-echo "cargo script done!"
