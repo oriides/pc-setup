@@ -21,7 +21,7 @@ if ! EMAIL=$(zenity --entry --title "GIT User Email" --text "Please enter your E
 fi
 
 ## globally sets git username and email
-git config --global user.name $NAME
+git config --global user.name "$NAME"
 git config --global user.email $EMAIL
 
 # –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
