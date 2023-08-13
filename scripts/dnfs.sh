@@ -32,11 +32,8 @@ sudo dnf install -y gnome-tweaks                            # gnome tweaks
 sudo dnf install -y google-chrome-stable                    # Google Chrome
 sudo dnf install -y gstreamer1-vaapi                        # GStreamer plugins to use VAAPI
 sudo dnf install -y gti 	                                # git launcher
-sudo dnf install -y helm                                    # helm kubernetes package manager
 sudo dnf install -y intel-media-driver                      # Intel VAAPI driver
 sudo dnf install -y intel-gpu-tools                         # Intel Graphics tools
-sudo dnf install -y kubernetes                              # kubernetes
-sudo dnf install -y kompose                                 # docker compose to kubernetes converter
 sudo dnf install -y libgda libgda-sqlite                    # deps for Pano Clipboard Manager
 sudo dnf install -y libheif                                 # HEIC/HEIF support
 sudo dnf install -y libva libva-utils                       # Video Acceleration (VAAPI)
