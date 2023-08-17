@@ -1,0 +1,5 @@
+################################################################################
+### Run installation tasks
+
+- include_tasks: dnfs.yml
+- include_tasks: configs.yml

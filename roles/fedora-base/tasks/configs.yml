@@ -1,0 +1,110 @@
+################################################################################
+### Install fonts
+
+- block:
+    - name: "configs : Install font (Powerline Symbols) - Step 1/2"
+      become: true
+      get_url:
+        url: "https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf"
+        dest: /usr/share/fonts/PowerlineSymbols.otf
+        owner: root
+        group: root
+    - name: "configs : Install font (Powerline Symbols) - Step 2/2"
+      become: true
+      get_url:
+        url: "https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf"
+        dest: /etc/fonts/conf.d/10-powerline-symbols.conf
+        owner: root
+        group: root
+
+- name: "configs : Install Google fonts"
+  become: true
+  shell: |
+    wget -O "/tmp/{{ item }}.zip" "https://fonts.google.com/download?family={{ item | urlencode }}"
+    unzip "/tmp/{{ item }}.zip" -d "/tmp/{{ item }}"
+    rm -r "/tmp/{{ item }}/static"
+    sudo chown -R root:root "/tmp/{{ item }}"
+    sudo mv "/tmp/{{ item }}" "/usr/share/fonts/"
+  with_items:
+    - Montserrat
+    - Lexend
+    - Space Grotesk
+    - Space Mono
+
+- name: "configs : Install Meslo Nerd Font" # for powerlevel10k
+  become: true
+  shell: |
+    mkdir MesloLGS-NF
+    wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf -O MesloLGS-NF/MesloLGS-NF-Regular.ttf
+    wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf -O MesloLGS-NF/MesloLGS-NF-Bold.ttf
+    wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf -O MesloLGS-NF/MesloLGS-NF-Italic.ttf
+    wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf -O MesloLGS-NF/MesloLGS-NF-Bold-Italic.ttf
+    sudo chown -R root:root MesloLGS-NF
+    sudo mv MesloLGS-NF /usr/share/fonts/
+
+- name: "configs : Reload font cache"
+  shell: fc-cache -vf
+
+################################################################################
+### Copy dotfiles
+
+- name: "configs : Install .zshrc"
+  copy:
+    src: "{{ role_path }}/files/dotfiles/.zshrc"
+    dest: "~/.zshrc"
+
+- name: "configs : Install .vimrc"
+  copy:
+    src: "{{ role_path }}/files/dotfiles/.vimrc"
+    dest: "~/.vimrc"
+
+################################################################################
+### Copy user configs
+
+- name: "configs : Copy user configs into ~/.config"
+  copy:
+    src: "{{ role_path }}/files/user-configs/{{ item }}"
+    dest: "~/.config"
+  with_items:
+    - MangoHud
+    - solaar
+
+################################################################################
+### Configure cron
+
+- name: "configs : Install cron jobs (daily)"
+  become: true
+  copy:
+    src: "{{ role_path }}/files/cronjobs/daily/{{ item }}"
+    dest: "/etc/cron.daily"
+    owner: root
+    group: root
+  with_items:
+    - delete-downloads
+
+- name: "configs : Enable cron service"
+  become: true
+  service:
+    name: crond
+    enabled: yes
+
+- name: "configs : Start cron service"
+  become: true
+  service:
+    name: crond
+    state: started
+
+################################################################################
+### Copy (dynamic) wallpapers
+
+- name: "configs : Copy wallpapers"
+  become: true
+  copy:
+    src: "{{ role_path }}/files/wallpapers/{{ item }}/{{ item }}"
+    dest: "/usr/share/backgrounds"
+    owner: root
+    group: root
+  with_items:
+    - desert
+    - fantasy
+    - zelda

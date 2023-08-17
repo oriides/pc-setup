@@ -1,7 +1,0 @@
-[Desktop Entry]
-Version=1.0
-Terminal=false
-Type=Application
-Name=Google Slides
-Exec=google-chrome https://docs.google.com/presentation/u/0/
-Icon=/home/nikolai/Pictures/Icons/Google_Slides.png

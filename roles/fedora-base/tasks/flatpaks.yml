@@ -1,0 +1,33 @@
+################################################################################
+### Prerequisites
+
+- name: "flatpaks : Add the flathub remote"
+  flatpak_remote:
+    name: flathub
+    flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
+    state: present
+
+################################################################################
+### Install packages
+
+- name: "flatpaks : Install flatpaks"
+  flatpak:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - org.audacityteam.Audacity # Audacity
+    - com.bitwarden.desktop # Bitwarden
+    - org.blender.Blender # Blender
+    - com.github.wwmm.easyeffects # Easy Effects
+    - com.github.tchx84.Flatseal # Flatseal
+    - org.gimp.GIMP # GIMP
+    - fr.handbrake.ghb # Handbrake
+    - fr.handbrake.ghb.Plugin.IntelMediaSDK # Handbrake Plugin (Intel QSV)
+    - org.inkscape.Inkscape # Inkscape
+    - com.obsproject.Studio # OBS
+    - com.obsproject.Studio.Plugin.Gstreamer # OBS Plugin
+    - com.obsproject.Studio.Plugin.MoveTransition # OBS Plugin
+    - md.obsidian.Obsidian # Markdown Notes
+    - org.onlyoffice.desktopeditors # OnlyOffice
+    - org.videolan.VLC # VLC
+    - io.github.mimbrero.WhatsAppDesktop # WhatsApp

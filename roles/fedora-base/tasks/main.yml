@@ -1,0 +1,14 @@
+################################################################################
+### Run installation tasks
+
+- include_tasks: dnfs.yml
+- include_tasks: flatpaks.yml
+- include_tasks: configs.yml
+
+################################################################################
+### Copy todo file into home directory
+
+- name: "Copy TODO file into home directory"
+  copy:
+    src: "{{ role_path }}/files/todos.md"
+    dest: "~/todos.md"

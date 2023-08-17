@@ -1,0 +1,8 @@
+################################################################################
+### Ammend dotfiles
+
+- name: "configs : add Intel driver fixes to .zshrc"
+  lineinfile:
+    path: "~/.zshrc"
+    insertafter: "### system configs"
+    line: "\n# configure VAAPI to use intel-media-driver\nexport LIBVA_DRIVER_NAME=iHD"
