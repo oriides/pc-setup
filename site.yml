@@ -1,0 +1,6 @@
+- hosts: fargo
+  connection: local
+  roles:
+    - fedora-base
+    - fedora-intel-graphics
+    - fedora-gnome

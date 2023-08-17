@@ -5,20 +5,35 @@ if (( $EUID == 0 )); then
     exit
 fi
 
-# –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-# prepare sub-scripts
+################################################################################
+### install ansible
 
-sudo chmod +x ./scripts
+notify-send -i dialog-information "Prerequisites…" "Installing Ansible…"
 
-# –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-# run sub-scripts
+sudo dnf install -y ansible
 
-scripts/prerequisites.sh && \
-notify-send -i emblem-default "Step 1/4" "Prepared system for installation" && \
-scripts/dnfs.sh && \
-notify-send -i emblem-default "Step 2/4" "Finished installing system applications (dnf packages)" && \
-scripts/flatpaks.sh && \
-notify-send -i emblem-default "Step 3/4" "Finished installing user applications (flatpak apps)" && \
-scripts/config.sh && \
-notify-send -i emblem-default "Step 4/4" "Finished configuration of system" && \
-notify-send -i dialog-information "Installation Script" "Done! Please reboot to apply all changes.\nAfterwards consult the todos.md file in your home directory for further steps"
+################################################################################
+### configure git
+
+notify-send -i dialog-information "Configuring git…" "Please provide you username and email"
+
+./scripts/git-config.sh
+
+################################################################################
+### run ansible playbook
+
+notify-send -i dialog-information "Starting installation…" "Running Ansible Playbook…"
+
+ansible-galaxy collection install community.general
+ansible-playbook site.yml -i inventory --ask-become-pass
+
+################################################################################
+### configure oh-my-zsh
+
+notify-send -i dialog-information "Configuring oh-my-zsh…" "Installing plugins and themes…"
+
+./scripts/zsh-config.sh
+
+################################################################################
+
+notify-send -i dialog-information "Installation finished!" "Please reboot to apply all changes.\nAfterwards consult the todos.md file in your home directory for further steps"

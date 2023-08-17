@@ -1,0 +1,14 @@
+################################################################################
+### Copy (dynamic) wallpapers
+
+- name: "configs : Setup dynamic wallpapers"
+  become: true
+  copy:
+    src: "{{ role_path }}/files/wallpapers/{{ item }}/{{ item }}.xml"
+    dest: "/usr/share/gnome-background-properties"
+    owner: root
+    group: root
+  with_items:
+    - desert
+    - fantasy
+    - zelda

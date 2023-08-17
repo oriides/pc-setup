@@ -1,0 +1,129 @@
+################################################################################
+### Prerequisites
+
+- name: "dnf : configure dnf"
+  become: true
+  copy:
+    content: |
+      # see `man dnf.conf` for defaults and possible options
+
+      [main]
+      gpgcheck=True
+      installonly_limit=3
+      clean_requirements_on_remove=True
+      best=False
+      skip_if_unavailable=True
+      fastestmirror=True
+      max_parallel_downloads=8
+      defaultyes=True
+    dest: /etc/dnf/dnf.conf
+
+- name: "dnf : Install RPM Fusion free repository"
+  become: true
+  dnf:
+    name: "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_facts['distribution_major_version'] }}.noarch.rpm"
+    state: present
+
+- name: "dnf : Install RPM Fusion nonfree repository"
+  become: true
+  dnf:
+    name: "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_facts['distribution_major_version'] }}.noarch.rpm"
+    state: present
+
+################################################################################
+### 3rd-party repositories
+
+- name: "dnf : Import GPG keys"
+  become: true
+  rpm_key:
+    key: "{{ item }}"
+    state: present
+  with_items:
+    - https://d2t3ff60b2tol4.cloudfront.net/repomd.xml.key # Insync
+    - https://repo.vivaldi.com/archive/linux_signing_key.pub # Vivaldi
+    - https://packages.microsoft.com/keys/microsoft.asc # VSCode
+
+- name: "dnf : Copy repository files"
+  become: true
+  copy:
+    src: "{{ role_path }}/files/yum-repos/{{ item }}.repo"
+    dest: "/etc/yum.repos.d/{{ item }}.repo"
+  with_items: 
+    - insync
+    - vivaldi
+    - vscode
+
+- name: "dnf : Enable COPR repositories"
+  become: true
+  community.general.copr:
+    name: "{{ item }}"
+    state: enabled
+  with_items: 
+    - atim/bottom
+    - zeno/scrcpy
+
+################################################################################
+### Install packages
+
+- name: "dnf : Install system utilities"
+  become: true
+  dnf:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - "@virtualization" # supplementary virtualization programs
+    - bottom # process and usage explorer
+    - cronie # cron
+    - dnf-plugins-core # additional dnf plugins
+    - gamescope # micro-compositor
+    - gti # fun git easter egg
+    - mangohud # vulkan performance monitor
+    - neofetch # system information
+    - openssl # ssl
+    - openssl-devel # ssl
+    - podman-compose # podman alias for docker compose
+    - podman-docker # podman alias for docker
+    - powerline # powerline
+    - vim-powerline # powerline
+    - sl # fun ls easter egg
+    - tokei # code/file statistics
+    - toolbox # container environments
+    - zsh # zsh
+
+- name: "dnf : Install multimedia dependencies & codecs"
+  become: true
+  dnf:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - "@multimedia" # multimedia codec group
+    - libheif # HEIC/HEIF support
+    - lame # lame (mp3) audio codec
+    - libva # video acceleration (VAAPI)
+    - libva-utils # video acceleration (VAAPI)
+    - gstreamer1-vaapi # video acceleration (VAAPI)
+    - gstreamer1-plugins-base # gstreamer multimedia codecs
+    - gstreamer1-plugins-bad* # gstreamer multimedia codecs
+    - gstreamer1-plugins-good* # gstreamer multimedia codecs
+    - ffmpeg # ffmpeg AV transcoder
+    - ffmpeg-libs # ffmpeg AV transcoder
+
+- name: "dnf : Install applications"
+  become: true
+  dnf:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - code # Visual Studio Code
+    - google-chrome-stable # Google Chrome
+    - insync # Insync
+    - scrcpy # Android screen mirroring
+    - solaar # Logitech peripherals manager
+    - steam # Steam
+    - vivaldi # Vivaldi
+
+- name: "dnf : Update all DNF packages"
+  become: true
+  dnf:
+    name: "*"
+    state: latest
