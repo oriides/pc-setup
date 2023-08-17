@@ -1,5 +1,7 @@
 # PC Setup
 
+Ansible playbook for setting up my personal PC
+
 ## Installation
 
 1. Modify the roles in the [`site.yml`](site.yml) that you would like to apply to the PC.
