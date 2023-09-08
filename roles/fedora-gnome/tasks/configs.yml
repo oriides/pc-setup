@@ -12,3 +12,169 @@
     - desert
     - fantasy
     - zelda
+
+################################################################################
+### Install GNOME Extensions
+
+# FIXME
+# - name: "configs : Install GNOME Extensions"
+#   become: true
+#   petermosmans.customize-gnome.gnome_extensions:
+#     - id: "{{ item }}"
+#       enable: yes
+#   with_items:
+#     - 7 # Removable Drive Menu
+#     - 307 # Dash to Dock
+#     - 615 # AppIndicator and KStatusNotifierItem Support
+#     - 744 # Hide Activities Button
+#     - 1319 # GSConnect
+#     - 2236 # Night Theme Switcher
+#     - 3193 # Blur my Shell
+#     - 3733 # Tiling Assistant
+#     - 3780 # ddterm
+#     - 4451 # Logo Menu
+#     - 4977 # Sur Clock
+#     - 5278 # Pano - Clipboard Manager
+
+################################################################################
+### dconf settings
+
+################################################################################
+### Change Window Button layout
+
+- name: "configs : dconf : Change Window Button layout"
+  dconf:
+    key: "/org/gnome/desktop/wm/preferences/button-layout"
+    value: "'close,minimize,maximize:appmenu'"
+
+################################################################################
+### Modify Clock
+
+- block:
+    - name: "configs : dconf : Change clock settings - Step 1/2"
+      dconf:
+        key: "/org/gnome/desktop/interface/clock-show-seconds"
+        value: true
+    - name: "configs : dconf : Change clock settings - Step 2/2"
+      dconf:
+        key: "/org/gnome/desktop/interface/clock-show-weekday"
+        value: true
+
+################################################################################
+### Disable hot-corners
+
+- name: "configs : dconf : Disable hot-corners"
+  dconf:
+    key: "/org/gnome/desktop/interface/enable-hot-corners"
+    value: false
+
+################################################################################
+### Set Fonts
+
+- block:
+    - name: "configs : dconf : Set system fonts - Step 1/4"
+      dconf:
+        key: "/org/gnome/desktop/interface/document-font-name"
+        value: "'Space Grotesk 11'"
+    - name: "configs : dconf : Set system fonts - Step 2/4"
+      dconf:
+        key: "/org/gnome/desktop/interface/font-name"
+        value: "'Space Grotesk 11'"
+    - name: "configs : dconf : Set system fonts - Step 3/4"
+      dconf:
+        key: "/org/gnome/desktop/interface/monospace-font-name"
+        value: "'Space Mono 11'"
+    - name: "configs : dconf : Set system fonts - Step 4/4"
+      dconf:
+        key: "/org/gnome/desktop/wm/preferences/titlebar-font"
+        value: "'Space Grotesk Bold 11'"
+
+################################################################################
+### Set GTK# Theme
+
+- name: "configs : dconf : Set GTK+ Theme"
+  dconf:
+    key: "/org/gnome/desktop/interface/gtk-theme"
+    value: "'adw-gtk3-dark'"
+
+################################################################################
+### Configure Nautilus
+
+- block:
+    - name: "configs : dconf : Configure Nautilus - Step 1/2"
+      dconf:
+        key: "/org/gnome/nautilus/preferences/default-folder-viewer"
+        value: "'list-view'"
+    - name: "configs : dconf : Configure Nautilus - Step 2/2"
+      dconf:
+        key: "/org/gnome/nautilus/list-view/use-tree-view"
+        value: true
+
+################################################################################
+### Configure Keyboard Shortcuts
+
+- block:
+    - name: "configs : dconf : Keybindings - Step 1/7"
+      dconf:
+        key: "/org/gnome/shell/keybindings/toggle-application-view"
+        value: "[]"
+    - name: "configs : dconf : Keybindings - Step 2/7"
+      dconf:
+        key: "/org/gnome/shell/keybindings/toggle-message-tray"
+        value: "['<Super>a']"
+    - name: "configs : dconf : Keybindings - Step 3/7"
+      dconf:
+        key: "/org/gnome/settings-daemon/plugins/media-keys/control-center"
+        value: "['<Super>i']"
+    - name: "configs : dconf : Keybindings - Step 4/7"
+      dconf:
+        key: "/org/gnome/settings-daemon/plugins/media-keys/home"
+        value: "['<Super>e']"
+    - name: "configs : dconf : Keybindings - Step 5/7"
+      dconf:
+        key: "/org/gnome/desktop/wm/keybindings/activate-window-menu"
+        value: "[]"
+    - name: "configs : dconf : Keybindings - Step 6/7"
+      dconf:
+        key: "/org/gnome/desktop/wm/keybindings/switch-input-source"
+        value: "[]"
+    - name: "configs : dconf : Keybindings - Step 7/7"
+      dconf:
+        key: "/org/gnome/desktop/wm/keybindings/switch-input-source-backward"
+        value: "[]"
+
+################################################################################
+### Configure Keyboard Shortcut for Terminal
+
+- block:
+    - name: "configs : dconf : Keybindings (Custom: Terminal) - Step 1/3"
+      dconf:
+        key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name"
+        value: "'Terminal'"
+    - name: "configs : dconf : Keybindings (Custom: Terminal) - Step 2/3"
+      dconf:
+        key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command"
+        value: "'gnome-terminal'"
+    - name: "configs : dconf : Keybindings (Custom: Terminal) - Step 3/3"
+      dconf:
+        key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding"
+        value: "'<Control><Alt>t'"
+
+################################################################################
+### Configure Keyboard Shortcut for ddterm
+
+- block:
+    - name: "configs : dconf : Keybindings (Custom: ddterm) - Step 1/3"
+      dconf:
+        key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/name"
+        value: "'ddterm'"
+    - name: "configs : dconf : Keybindings (Custom: ddterm) - Step 2/3"
+      dconf:
+        key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/command"
+        value: "'gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell/Extensions/ddterm --method com.github.amezin.ddterm.Extension.Toggle'"
+    - name: "configs : dconf : Keybindings (Custom: ddterm) - Step 3/3"
+      dconf:
+        key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/binding"
+        value: "'<Super>space'"
+# TODO: Download and Install Icon Theme
+# TODO: Download and Install Cursor Theme

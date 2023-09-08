@@ -108,3 +108,15 @@
     - desert
     - fantasy
     - zelda
+
+################################################################################
+### Wayland Fix for Solaar (Logitech Peripherals Manager)
+### see: https://pwr-solaar.github.io/Solaar/rules.html
+
+- name: "configs: Solaar Wayland fix"
+  become: true
+  get_url:
+    url: "https://raw.githubusercontent.com/pwr-Solaar/Solaar/master/rules.d-uinput/42-logitech-unify-permissions.rules"
+    dest: /etc/udev/rules.d/42-logitech-unify-permissions.rules
+    owner: root
+    group: root
