@@ -83,7 +83,7 @@
     - name: "configs : dconf : Set system fonts - Step 3/4"
       dconf:
         key: "/org/gnome/desktop/interface/monospace-font-name"
-        value: "'Space Mono 11'"
+        value: "'Space Mono 10'"
     - name: "configs : dconf : Set system fonts - Step 4/4"
       dconf:
         key: "/org/gnome/desktop/wm/preferences/titlebar-font"
