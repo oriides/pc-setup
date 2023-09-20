@@ -30,6 +30,7 @@
     - Lexend
     - Space Grotesk
     - Space Mono
+    - Shippori Mincho
 
 - name: "configs : Install Meslo Nerd Font" # for powerlevel10k
   become: true
