@@ -22,7 +22,7 @@
   shell: |
     wget -O "/tmp/{{ item }}.zip" "https://fonts.google.com/download?family={{ item | urlencode }}"
     unzip "/tmp/{{ item }}.zip" -d "/tmp/{{ item }}"
-    rm -r "/tmp/{{ item }}/static"
+    rm -r "/tmp/{{ item }}/static" || true
     sudo chown -R root:root "/tmp/{{ item }}"
     sudo mv "/tmp/{{ item }}" "/usr/share/fonts/"
   with_items:
