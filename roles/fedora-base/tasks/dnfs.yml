@@ -75,8 +75,10 @@
     - bottom # process and usage explorer
     - cronie # cron
     - dnf-plugins-core # additional dnf plugins
+    - helm # k8s package manager
     - gamescope # micro-compositor
     - gti # fun git easter egg
+    - kubernetes # k8s utilities
     - mangohud # vulkan performance monitor
     - neofetch # system information
     - openssl # ssl
