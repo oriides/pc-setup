@@ -45,7 +45,7 @@
 - name: "configs : dconf : Change Window Button layout"
   dconf:
     key: "/org/gnome/desktop/wm/preferences/button-layout"
-    value: "'close,minimize,maximize:appmenu'"
+    value: "'appmenu:minimize,maximize,close'"
 
 ################################################################################
 ### Modify Clock
