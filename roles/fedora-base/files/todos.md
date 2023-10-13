@@ -18,6 +18,7 @@ Compile and install torchlight
 
 - Veracrypt
 - UxPlay
+- SOPS
 
 ## Please manually install some PWAs through Chrome/ Chromium/ Chromium Based Browser
 

@@ -39,6 +39,8 @@
     key: "{{ item }}"
     state: present
   with_items:
+    - https://dl.google.com/linux/linux_signing_key.pub # Google (Chrome)
+    - https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg # Google (Cloud SDK)
     - https://d2t3ff60b2tol4.cloudfront.net/repomd.xml.key # Insync
     - https://repo.vivaldi.com/archive/linux_signing_key.pub # Vivaldi
     - https://packages.microsoft.com/keys/microsoft.asc # VSCode
@@ -49,6 +51,8 @@
     src: "{{ role_path }}/files/yum-repos/{{ item }}.repo"
     dest: "/etc/yum.repos.d/{{ item }}.repo"
   with_items: 
+    - google-chrome
+    - google-cloud-sdk
     - insync
     - vivaldi
     - vscode
@@ -79,6 +83,8 @@
     - dnf-plugins-core # additional dnf plugins
     - helm # k8s package manager
     - gamescope # micro-compositor
+    - google-cloud-cli # gcloud
+    - google-cloud-cli-gke-gcloud-auth-plugin # gcloud KMS plugin
     - gti # fun git easter egg
     - kubernetes # k8s utilities
     - mangohud # vulkan performance monitor
