@@ -73,6 +73,8 @@
   with_items:
     - "@virtualization" # supplementary virtualization programs
     - bottom # process and usage explorer
+    - cargo # rust (cargo)
+    - clang # clang
     - cronie # cron
     - dnf-plugins-core # additional dnf plugins
     - helm # k8s package manager
@@ -86,6 +88,7 @@
     - podman-compose # podman alias for docker compose
     - podman-docker # podman alias for docker
     - powerline # powerline
+    - rust # rust (rustc)
     - vim-powerline # powerline
     - sl # fun ls easter egg
     - tokei # code/file statistics
