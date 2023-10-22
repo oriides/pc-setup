@@ -1,8 +1,10 @@
 ################################################################################
-### Ammend dotfiles
+### Configure system environment variables
 
-- name: "configs : add Intel driver fixes to .zshrc"
-  lineinfile:
-    path: "~/.zshrc"
-    insertafter: "### system configs"
-    line: "\n# configure VAAPI to use intel-media-driver\nexport LIBVA_DRIVER_NAME=iHD"
+- name: "configs : Add Intel VAAPI driver config to /etc/profile.d"
+  become: true
+  copy:
+    src: "{{ role_path }}/files/environment/intel-va-profile.sh"
+    dest: "/etc/profile.d"
+    owner: root
+    group: root
