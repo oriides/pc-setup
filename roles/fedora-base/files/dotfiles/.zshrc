@@ -20,13 +20,10 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 ################################################################################
-### system configs
+### user configs
 
 export VISUAL=vim
 export EDITOR="$VISUAL"
-
-################################################################################
-### user configs
 
 alias dcd="docker compose down"
 alias dcu="docker compose up -d --build"
