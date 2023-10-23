@@ -81,12 +81,14 @@
     - clang # clang
     - cronie # cron
     - dnf-plugins-core # additional dnf plugins
-    - helm # k8s package manager
     - gamescope # micro-compositor
     - google-cloud-cli # gcloud
     - google-cloud-cli-gke-gcloud-auth-plugin # gcloud KMS plugin
     - gti # fun git easter egg
+    - helm # k8s package manager
     - kubernetes # k8s utilities
+    - llvm # llvm
+    - lldb # llvm (debugger)
     - mangohud # vulkan performance monitor
     - neofetch # system information
     - openssl # ssl
