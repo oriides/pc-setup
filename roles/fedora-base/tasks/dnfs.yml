@@ -84,6 +84,7 @@
     - gamescope # micro-compositor
     - google-cloud-cli # gcloud
     - google-cloud-cli-gke-gcloud-auth-plugin # gcloud KMS plugin
+    - git # git
     - gti # fun git easter egg
     - helm # k8s package manager
     - kubernetes # k8s utilities
