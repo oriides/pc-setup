@@ -82,10 +82,10 @@
     - cronie # cron
     - dnf-plugins-core # additional dnf plugins
     - gamescope # micro-compositor
-    - google-cloud-cli # gcloud
-    - google-cloud-cli-gke-gcloud-auth-plugin # gcloud KMS plugin
     - git # git
     - git-lfs # git LFS
+    - google-cloud-cli # gcloud
+    - google-cloud-cli-gke-gcloud-auth-plugin # gcloud KMS plugin
     - gti # fun git easter egg
     - helm # k8s package manager
     - kubernetes # k8s utilities
