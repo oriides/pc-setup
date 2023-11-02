@@ -65,7 +65,7 @@
 - name: "configs : Copy user configs into ~/.config"
   copy:
     src: "{{ role_path }}/files/user-configs/{{ item }}"
-    dest: "~/.config"
+    dest: "~/.config/"
   with_items:
     - MangoHud
     - solaar
@@ -77,7 +77,7 @@
   become: true
   copy:
     src: "{{ role_path }}/files/cronjobs/daily/{{ item }}"
-    dest: "/etc/cron.daily"
+    dest: "/etc/cron.daily/"
     owner: root
     group: root
   with_items:
@@ -102,13 +102,24 @@
   become: true
   copy:
     src: "{{ role_path }}/files/wallpapers/{{ item }}/{{ item }}"
-    dest: "/usr/share/backgrounds"
+    dest: "/usr/share/backgrounds/"
     owner: root
     group: root
   with_items:
     - desert
     - fantasy
     - zelda
+
+# ################################################################################
+# ### Downlaod custom icon pack
+
+# FIXME: Repo is private, download won't work
+# - name: "configs : Download icon pack"
+#   become: true
+#   git:
+#     repo: "https://github.com/oriides/WinOSX-dark"
+#     dest: "/usr/share/icons/"
+#     accept_newhostkey: true
 
 ################################################################################
 ### Wayland Fix for Solaar (Logitech Peripherals Manager)
