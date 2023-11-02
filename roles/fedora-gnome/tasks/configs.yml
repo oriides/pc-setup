@@ -114,34 +114,38 @@
 ### Configure Keyboard Shortcuts
 
 - block:
-    - name: "configs : dconf : Keybindings - Step 1/7"
+    - name: "configs : dconf : Keybindings - Step 1/8"
       dconf:
         key: "/org/gnome/shell/keybindings/toggle-application-view"
         value: "[]"
-    - name: "configs : dconf : Keybindings - Step 2/7"
+    - name: "configs : dconf : Keybindings - Step 2/8"
       dconf:
         key: "/org/gnome/shell/keybindings/toggle-message-tray"
         value: "['<Super>a']"
-    - name: "configs : dconf : Keybindings - Step 3/7"
+    - name: "configs : dconf : Keybindings - Step 3/8"
       dconf:
         key: "/org/gnome/settings-daemon/plugins/media-keys/control-center"
         value: "['<Super>i']"
-    - name: "configs : dconf : Keybindings - Step 4/7"
+    - name: "configs : dconf : Keybindings - Step 4/8"
       dconf:
         key: "/org/gnome/settings-daemon/plugins/media-keys/home"
         value: "['<Super>e']"
-    - name: "configs : dconf : Keybindings - Step 5/7"
+    - name: "configs : dconf : Keybindings - Step 5/8"
       dconf:
         key: "/org/gnome/desktop/wm/keybindings/activate-window-menu"
         value: "[]"
-    - name: "configs : dconf : Keybindings - Step 6/7"
+    - name: "configs : dconf : Keybindings - Step 6/8"
       dconf:
         key: "/org/gnome/desktop/wm/keybindings/switch-input-source"
         value: "[]"
-    - name: "configs : dconf : Keybindings - Step 7/7"
+    - name: "configs : dconf : Keybindings - Step 7/8"
       dconf:
         key: "/org/gnome/desktop/wm/keybindings/switch-input-source-backward"
         value: "[]"
+    - name: "configs : dconf : Keybindings - Step 8/8"
+      dconf:
+        key: "/org/gnome/desktop/wm/keybindings/show-desktop"
+        value: "['<Super>d']"
 
 ################################################################################
 ### Configure Keyboard Shortcut for Terminal
