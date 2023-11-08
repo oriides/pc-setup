@@ -106,6 +106,7 @@
     owner: root
     group: root
   with_items:
+    - central-executive
     - desert
     - fantasy
     - zelda

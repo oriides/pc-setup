@@ -9,6 +9,8 @@
     owner: root
     group: root
   with_items:
+    - central-executive
+    - central-executive-hiss
     - desert
     - fantasy
     - zelda
