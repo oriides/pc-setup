@@ -25,6 +25,20 @@ source $ZSH/oh-my-zsh.sh
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
-alias dcd="docker compose down"
-alias dcu="docker compose up -d --build"
-alias dcr="docker compose down && docker compose up -d --build"
+export KUBECONFIG=~/.kube/config
+
+# define "nah" as a function in order to completely reset all changes in a git repo
+nah () {
+  echo -n "Are you sure? (y/N) "
+  read choice
+  if [[ "$choice" == "y" || "$choice" == "Y" ]]; then
+    git reset --hard
+    git clean -df
+    if [ -d ".git/rebase-apply" ] || [ -d ".git/rebase-merge" ]; then
+        git rebase --abort
+    fi
+  else
+    echo "Operation canceled"
+    return 0
+  fi
+}
