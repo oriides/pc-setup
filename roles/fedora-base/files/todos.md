@@ -23,16 +23,18 @@ Compile and install torchlight
 ## Please manually install some PWAs through Chrome/ Chromium/ Chromium Based Browser
 
 - [YouTube Music](https://music.youtube.com)
+- [Trello (TODOs)](https://trello.com/b/C2vdIkd0/todo-liste)
 - [Google Drive](https://drive.google.com)
 - [Google Photos](https://photos.google.com)
-- [ARD Mediathek](https://www.ardmediathek.de)
 - [Google Messages](https://messages.google.com/web)
-- [Google News](https://news.google.com)
 - [Diagrams.net](https://app.diagrams.net)
 - [Discord](https://discord.com/app)
+- Google Docs suite (Just shortcuts)
+- Teams & Outlook for work
 
 ## Please manually install these GNOME Extensions
 
+- [Blur my Shell](https://extensions.gnome.org/extension/3193/blur-my-shell/)
 - [AppIndicator and KStatusNotifierItem Support](https://extensions.gnome.org/extension/615/appindicator-support/)
 - [Dash to Dock](https://extensions.gnome.org/extension/307/dash-to-dock/)
 - [ddterm](https://extensions.gnome.org/extension/3780/ddterm/)
@@ -41,6 +43,5 @@ Compile and install torchlight
 - [Pano - Clipboard Manager](https://extensions.gnome.org/extension/5278/pano/)
 - [Removable Drive Menu](https://extensions.gnome.org/extension/7/removable-drive-menu/)
 - [Remove Alt-Tab Delay v2](https://extensions.gnome.org/extension/2741/remove-alttab-delay-v2/)
-- [Replace Activities Text](https://extensions.gnome.org/extension/4405/replace-activities-text/)
 - [Sur Clock](https://extensions.gnome.org/extension/4977/sur-clock/)
 - [Tiling Assistant](https://extensions.gnome.org/extension/3733/tiling-assistant/)
