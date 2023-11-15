@@ -18,12 +18,15 @@
       defaultyes=True
     dest: /etc/dnf/dnf.conf
 
+
+# FIXME: this is broken
 - name: "dnf : Install RPM Fusion free repository"
   become: true
   dnf:
     name: "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_facts['distribution_major_version'] }}.noarch.rpm"
     state: present
 
+# FIXME: this is broken
 - name: "dnf : Install RPM Fusion nonfree repository"
   become: true
   dnf:
@@ -77,7 +80,6 @@
   with_items:
     - "@virtualization" # supplementary virtualization programs
     - bottom # process and usage explorer
-    - cargo # rust (cargo)
     - clang # clang
     - cronie # cron
     - dnf-plugins-core # additional dnf plugins
@@ -93,12 +95,12 @@
     - lldb # llvm (debugger)
     - mangohud # vulkan performance monitor
     - neofetch # system information
+    - nodejs
     - openssl # ssl
     - openssl-devel # ssl
     - podman-compose # podman alias for docker compose
     - podman-docker # podman alias for docker
     - powerline # powerline
-    - rust # rust (rustc)
     - vim-powerline # powerline
     - sl # fun ls easter egg
     - tokei # code/file statistics
@@ -111,7 +113,7 @@
     name: "{{ item }}"
     state: present
   with_items:
-    - "@multimedia" # multimedia codec group
+  #  - "@multimedia" # multimedia codec group
     - libheif # HEIC/HEIF support
     - lame # lame (mp3) audio codec
     - libva # video acceleration (VAAPI)
@@ -120,8 +122,9 @@
     - gstreamer1-plugins-base # gstreamer multimedia codecs
     - gstreamer1-plugins-bad* # gstreamer multimedia codecs
     - gstreamer1-plugins-good* # gstreamer multimedia codecs
-    - ffmpeg # ffmpeg AV transcoder
-    - ffmpeg-libs # ffmpeg AV transcoder
+    # - ffmpeg # ffmpeg AV transcoder
+    # - ffmpeg-libs # ffmpeg AV transcoder
+    - ffmpeg-free # ffmpeg AV transcoder
 
 - name: "dnf : Install applications"
   become: true
@@ -135,7 +138,7 @@
     - scrcpy # Android screen mirroring
     - solaar # Logitech peripherals manager
     - steam # Steam
-    - vivaldi # Vivaldi
+    - vivaldi-stable # Vivaldi
 
 - name: "dnf : Update all DNF packages"
   become: true

@@ -18,7 +18,7 @@
     name: "{{ item }}"
     state: present
   with_items:
-    - adw-gtk3 # libadwaita theme for GTK3 applications 
+    - adw-gtk3-theme # libadwaita theme for GTK3 applications 
     - libgda # dependency for Pano Clipboard Manager
     - libgda-sqlite # dependency for Pano Clipboard Manager
 
@@ -33,3 +33,12 @@
     - file-roller-nautilus # archive manager
     - gnome-tweaks # additional settings for GNOME
     - seahorse # keys & secrets manager
+
+- name: "dnf : Uninstall unwanted applications"
+  become: true
+  dnf:
+    name: "{{ item }}"
+    state: absent
+  with_items: 
+    - libreoffice-core
+    - rhythmbox
