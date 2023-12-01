@@ -149,7 +149,7 @@
         key: "/org/gnome/desktop/wm/keybindings/show-desktop"
         value: "['<Super>d']"
 
-# FIXME: Theses don't work like this anymore
+# FIXME: These don't work like this anymore
 ################################################################################
 ### Configure Keyboard Shortcut for Terminal
 
@@ -167,7 +167,7 @@
 #         key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding"
 #         value: "'<Control><Alt>t'"
 
-# FIXME: Theses don't work like this anymore
+# FIXME: These don't work like this anymore
 ################################################################################
 ### Configure Keyboard Shortcut for ddterm
 
