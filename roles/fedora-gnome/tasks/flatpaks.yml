@@ -25,4 +25,4 @@
     - io.github.nokse22.inspector # Inspector
     - org.gnome.World.PikaBackup # Pika Backup
     - org.gnome.PowerStats # Power Statistics
-    - net.nokyan.Resources # System Monitor
+    - io.missioncenter.MissionCenter # System Monitor
