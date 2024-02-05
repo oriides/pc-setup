@@ -44,7 +44,7 @@
     - https://dl.google.com/linux/linux_signing_key.pub # Google (Chrome)
     - https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg # Google (Cloud SDK)
     - https://d2t3ff60b2tol4.cloudfront.net/repomd.xml.key # Insync
-    - https://repo.vivaldi.com/archive/linux_signing_key.pub # Vivaldi
+    # - https://repo.vivaldi.com/archive/linux_signing_key.pub # Vivaldi
     - https://packages.microsoft.com/keys/microsoft.asc # VSCode
 
 - name: "dnf : Copy repository files"
@@ -56,7 +56,7 @@
     - google-chrome
     - google-cloud-sdk
     - insync
-    - vivaldi
+    # - vivaldi
     - vscode
 
 - name: "dnf : Enable COPR repositories"
@@ -138,7 +138,7 @@
     - scrcpy # Android screen mirroring
     - solaar # Logitech peripherals manager
     - steam # Steam
-    - vivaldi-stable # Vivaldi
+    # - vivaldi-stable # Vivaldi
 
 - name: "dnf : Update all DNF packages"
   become: true
