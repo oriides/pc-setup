@@ -6,6 +6,14 @@
     rustup-init -y
 
 ################################################################################
+### Suppress podman-docker warning
+
+- name: "configs : Install Rust Toolchain"
+  become: true
+  touch:
+    path: /etc/containers/nodocker
+
+################################################################################
 ### Install fonts
 
 - block:
