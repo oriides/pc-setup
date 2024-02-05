@@ -63,11 +63,11 @@
         value: true
     - name: "configs : dconf : Change clock & calendar settings - Step 3/4"
       dconf:
-        key: "org.gnome.desktop.datetime automatic-timezone"
+        key: "/org/gnome/desktop/datetime/automatic-timezone"
         value: true
     - name: "configs : dconf : Change clock & calendar settings - Step 4/4"
       dconf:
-        key: "org.gnome.desktop.calendar show-weekdate"
+        key: "/org/gnome/desktop/calendar/show-weekdate"
         value: true
 
 ################################################################################
@@ -83,7 +83,7 @@
 
 - name: "configs : dconf : Disable attach modal dialogs"
   dconf:
-    key: "org.gnome.mutter attach-modal-dialogs"
+    key: "/org/gnome/mutter/attach-modal-dialogs"
     value: false
 
 ################################################################################
@@ -91,7 +91,7 @@
 
 - name: "configs : dconf : Enable tap-to-click"
   dconf:
-    key: "org.gnome.desktop.peripherals.touchpad tap-to-click"
+    key: "/org/gnome/desktop/peripherals/touchpad/tap-to-click"
     value: true
 
 ################################################################################
@@ -174,11 +174,11 @@
         value: "['<Super>d']"
     - name: "configs : dconf : Keybindings - Step 9/10"
       dconf:
-        key: "org.gnome.desktop.wm.keybindings switch-applications"
+        key: "/org/gnome/desktop/wm/keybindings/switch-applications"
         value: " ['<Super>Tab']"
     - name: "configs : dconf : Keybindings - Step 10/10"
       dconf:
-        key: "org.gnome.desktop.wm.keybindings switch-windows"
+        key: "/org/gnome/desktop/wm/keybindings/switch-windows"
         value: "['<Alt>Tab']"
 
 # FIXME: These don't work like this anymore
