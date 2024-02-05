@@ -87,6 +87,14 @@
     value: false
 
 ################################################################################
+### Enable tap-to-click
+
+- name: "configs : dconf : Enable tap-to-click"
+  dconf:
+    key: "org.gnome.desktop.peripherals.touchpad tap-to-click"
+    value: true
+
+################################################################################
 ### Set Fonts
 
 - block:
