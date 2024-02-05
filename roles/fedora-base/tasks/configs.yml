@@ -8,10 +8,12 @@
 ################################################################################
 ### Suppress podman-docker warning
 
-- name: "configs : Install Rust Toolchain"
+- name: "configs : Suppress podman-docker warning"
   become: true
-  touch:
+  file:
     path: /etc/containers/nodocker
+    state: touch
+    mode: 644
 
 ################################################################################
 ### Install fonts
