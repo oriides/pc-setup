@@ -50,16 +50,24 @@
     value: "'appmenu:minimize,maximize,close'"
 
 ################################################################################
-### Modify Clock
+### Modify Clock & Calendar
 
 - block:
-    - name: "configs : dconf : Change clock settings - Step 1/2"
+    - name: "configs : dconf : Change clock & calendar settings - Step 1/4"
       dconf:
         key: "/org/gnome/desktop/interface/clock-show-seconds"
         value: true
-    - name: "configs : dconf : Change clock settings - Step 2/2"
+    - name: "configs : dconf : Change clock & calendar settings - Step 2/4"
       dconf:
         key: "/org/gnome/desktop/interface/clock-show-weekday"
+        value: true
+    - name: "configs : dconf : Change clock & calendar settings - Step 3/4"
+      dconf:
+        key: "org.gnome.desktop.datetime automatic-timezone"
+        value: true
+    - name: "configs : dconf : Change clock & calendar settings - Step 4/4"
+      dconf:
+        key: "org.gnome.desktop.calendar show-weekdate"
         value: true
 
 ################################################################################
