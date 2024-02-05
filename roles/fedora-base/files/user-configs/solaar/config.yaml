@@ -1,4 +1,4 @@
-- 1.1.9
+- 1.1.10
 - _NAME: MX Master 3S
   _absent:
     [
@@ -52,7 +52,7 @@
   smart-shift: 10
   thumb-scroll-invert: true
   thumb-scroll-mode: false
-- _NAME: MX Mechanical
+- _NAME: MX MCHNCL
   _absent:
     [
       hi-res-scroll,
