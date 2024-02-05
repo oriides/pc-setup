@@ -18,7 +18,6 @@
       defaultyes=True
     dest: /etc/dnf/dnf.conf
 
-
 # FIXME: this is broken
 - name: "dnf : Install RPM Fusion free repository"
   become: true
@@ -53,7 +52,7 @@
   copy:
     src: "{{ role_path }}/files/yum-repos/{{ item }}.repo"
     dest: "/etc/yum.repos.d/{{ item }}.repo"
-  with_items: 
+  with_items:
     - google-chrome
     - google-cloud-sdk
     - insync
@@ -65,7 +64,7 @@
   community.general.copr:
     name: "{{ item }}"
     state: enabled
-  with_items: 
+  with_items:
     - atim/bottom
     - zeno/scrcpy
 
@@ -102,6 +101,7 @@
     - podman-docker # podman alias for docker
     - powerline # powerline
     - vim-powerline # powerline
+    - rustup # rust toolchain installer
     - sl # fun ls easter egg
     - tokei # code/file statistics
     - toolbox # container environments
@@ -113,7 +113,7 @@
     name: "{{ item }}"
     state: present
   with_items:
-  #  - "@multimedia" # multimedia codec group
+    #  - "@multimedia" # multimedia codec group
     - libheif # HEIC/HEIF support
     - lame # lame (mp3) audio codec
     - libva # video acceleration (VAAPI)
