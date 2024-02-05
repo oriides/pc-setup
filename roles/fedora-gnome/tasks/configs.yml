@@ -116,38 +116,46 @@
 ### Configure Keyboard Shortcuts
 
 - block:
-    - name: "configs : dconf : Keybindings - Step 1/8"
+    - name: "configs : dconf : Keybindings - Step 1/10"
       dconf:
         key: "/org/gnome/shell/keybindings/toggle-application-view"
         value: "['']"
-    - name: "configs : dconf : Keybindings - Step 2/8"
+    - name: "configs : dconf : Keybindings - Step 2/10"
       dconf:
         key: "/org/gnome/shell/keybindings/toggle-message-tray"
         value: "['<Super>a']"
-    - name: "configs : dconf : Keybindings - Step 3/8"
+    - name: "configs : dconf : Keybindings - Step 3/10"
       dconf:
         key: "/org/gnome/settings-daemon/plugins/media-keys/control-center"
         value: "['<Super>i']"
-    - name: "configs : dconf : Keybindings - Step 4/8"
+    - name: "configs : dconf : Keybindings - Step 4/10"
       dconf:
         key: "/org/gnome/settings-daemon/plugins/media-keys/home"
         value: "['<Super>e']"
-    - name: "configs : dconf : Keybindings - Step 5/8"
+    - name: "configs : dconf : Keybindings - Step 5/10"
       dconf:
         key: "/org/gnome/desktop/wm/keybindings/activate-window-menu"
         value: "['']"
-    - name: "configs : dconf : Keybindings - Step 6/8"
+    - name: "configs : dconf : Keybindings - Step 6/10"
       dconf:
         key: "/org/gnome/desktop/wm/keybindings/switch-input-source"
         value: "['']"
-    - name: "configs : dconf : Keybindings - Step 7/8"
+    - name: "configs : dconf : Keybindings - Step 7/10"
       dconf:
         key: "/org/gnome/desktop/wm/keybindings/switch-input-source-backward"
         value: "['']"
-    - name: "configs : dconf : Keybindings - Step 8/8"
+    - name: "configs : dconf : Keybindings - Step 8/10"
       dconf:
         key: "/org/gnome/desktop/wm/keybindings/show-desktop"
         value: "['<Super>d']"
+    - name: "configs : dconf : Keybindings - Step 9/10"
+      dconf:
+        key: "org.gnome.desktop.wm.keybindings switch-applications"
+        value: " ['<Super>Tab']"
+    - name: "configs : dconf : Keybindings - Step 10/10"
+      dconf:
+        key: "org.gnome.desktop.wm.keybindings switch-windows"
+        value: "['<Alt>Tab']"
 
 # FIXME: These don't work like this anymore
 ################################################################################
