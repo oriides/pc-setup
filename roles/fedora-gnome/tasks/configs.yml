@@ -79,6 +79,14 @@
     value: false
 
 ################################################################################
+### Disable attach modal dialogs
+
+- name: "configs : dconf : Disable attach modal dialogs"
+  dconf:
+    key: "org.gnome.mutter attach-modal-dialogs"
+    value: false
+
+################################################################################
 ### Set Fonts
 
 - block:
