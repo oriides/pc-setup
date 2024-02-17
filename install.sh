@@ -13,11 +13,9 @@ notify-send -i dialog-information "Prerequisites…" "Installing Ansible…"
 sudo dnf install -y ansible
 
 ################################################################################
-### configure git
+### get git credentials
 
-notify-send -i dialog-information "Configuring git…" "Please provide you username and email"
-
-./scripts/git-config.sh
+source ./scripts/git-config.sh
 
 ################################################################################
 ### run ansible playbook

@@ -1,4 +1,31 @@
 ################################################################################
+### Configure git
+
+- name: "configs : configure git username"
+  community.general.git_config:
+    name: user.name
+    scope: global
+    value: "{{ lookup('ansible.builtin.env', 'GIT_NAME', default='nobody') }}"
+
+- name: "configs : configure git email"
+  community.general.git_config:
+    name: user.email
+    scope: global
+    value: "{{ lookup('ansible.builtin.env', 'GIT_EMAIL', default='nobody@example.com') }}"
+
+- name: "configs : configure git pull/rebase strategy"
+  community.general.git_config:
+    name: pull.rebase # With rebasing, new commits will be created for the changes on your local branch that start after the changes on the remote branch instead of creating a merge commit.
+    scope: global
+    value: true
+
+- name: "configs : configure git fetch prune option"
+  community.general.git_config:
+    name: fetch.prune # This configuration will automatically clean Git objects in your repository locally whenever you fetch changes from remote.
+    scope: global
+    value: true
+
+################################################################################
 ### Install Rust
 
 - name: "configs : Install Rust Toolchain"
