@@ -71,11 +71,14 @@
     sudo cp -R "/tmp/{{ item }}" "/usr/share/fonts/"
     sudo rm -r "/tmp/{{ item }}"
   with_items:
-    - Montserrat
+    - IBM Plex Sans
+    - IBM Plex Serif
     - Lexend
+    - Montserrat
+    - Raleway
+    - Shippori Mincho
     - Space Grotesk
     - Space Mono
-    - Shippori Mincho
 
 - name: "configs : Install Nerd Fonts" # for powerlevel10k # TODO: keep release version up to date
   become: true
@@ -87,9 +90,9 @@
     sudo rm -r "/tmp/NF_{{ item }}"
   with_items:
     - IBMPlexMono
-    - UbuntuMono
     - IntelOneMono
     - SpaceMono
+    - UbuntuMono
 
 - name: "configs : Reload font cache"
   shell: fc-cache -vf
