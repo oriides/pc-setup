@@ -68,7 +68,8 @@
     unzip "/tmp/{{ item }}.zip" -d "/tmp/{{ item }}"
     rm -r "/tmp/{{ item }}/static" || true
     sudo chown -R root:root "/tmp/{{ item }}"
-    sudo mv "/tmp/{{ item }}" "/usr/share/fonts/"
+    sudo cp -R "/tmp/{{ item }}" "/usr/share/fonts/"
+    sudo rm -r "/tmp/{{ item }}"
   with_items:
     - Montserrat
     - Lexend
@@ -76,16 +77,19 @@
     - Space Mono
     - Shippori Mincho
 
-- name: "configs : Install Meslo Nerd Font" # for powerlevel10k
+- name: "configs : Install Nerd Fonts" # for powerlevel10k # TODO: keep release version up to date
   become: true
   shell: |
-    mkdir MesloLGS-NF
-    wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf -O MesloLGS-NF/MesloLGS-NF-Regular.ttf
-    wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf -O MesloLGS-NF/MesloLGS-NF-Bold.ttf
-    wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf -O MesloLGS-NF/MesloLGS-NF-Italic.ttf
-    wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf -O MesloLGS-NF/MesloLGS-NF-Bold-Italic.ttf
-    sudo chown -R root:root MesloLGS-NF
-    sudo mv MesloLGS-NF /usr/share/fonts/
+    wget -O "/tmp/{{ item }}.zip" "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/{{ item | urlencode }}.zip"
+    unzip "/tmp/{{ item }}.zip" -d "/tmp/NF_{{ item }}"
+    sudo chown -R root:root "/tmp/NF_{{ item }}"
+    sudo cp -R "/tmp/NF_{{ item }}" "/usr/share/fonts/"
+    sudo rm -r "/tmp/NF_{{ item }}"
+  with_items:
+    - IBMPlexMono
+    - UbuntuMono
+    - IntelOneMono
+    - SpaceMono
 
 - name: "configs : Reload font cache"
   shell: fc-cache -vf
