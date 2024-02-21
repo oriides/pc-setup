@@ -25,6 +25,12 @@
     scope: global
     value: true
 
+- name: "configs : configure git rerere option"
+  community.general.git_config:
+    name: rerere.enabled # This configuration enables merge conflict resolution recording.
+    scope: global
+    value: true
+
 - name: "configs : configure git nah alias"
   community.general.git_config:
     name: alias.nah # This alias completely cleans the current repo
