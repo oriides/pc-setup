@@ -27,7 +27,7 @@
 
 - name: "configs : configure git nah alias"
   community.general.git_config:
-    name: alias.nah # This configuration will automatically clean Git objects in your repository locally whenever you fetch changes from remote.
+    name: alias.nah # This alias completely cleans the current repo
     scope: global
     value: '!f(){ echo -n "Are you sure? (y/N) "; read choice; if [[ "$choice" == "y" || "$choice" == "Y" ]]; then git reset --hard; git clean -df; if [ -d ".git/rebase-apply" ] || [ -d ".git/rebase-merge" ]; then git rebase --abort; fi; else echo "Operation canceled"; return 0; fi; }; f'
 
