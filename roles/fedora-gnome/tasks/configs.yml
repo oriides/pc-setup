@@ -11,8 +11,10 @@
   with_items:
     - central-executive
     - central-executive-hiss
+    - chroma_blue
     - desert
     - fantasy
+    - WWDC_2019
     - zelda
 
 ################################################################################
