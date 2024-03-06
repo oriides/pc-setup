@@ -10,11 +10,4 @@
         <pcolor>#3465a4</pcolor>
         <scolor>#000000</scolor>
     </wallpaper>
-
-    <wallpaper deleted="false">
-        <name>00 Central-Executive Time of Day</name>
-        <filename>/usr/share/backgrounds/central-executive/central-executive.xml</filename>
-        <options>zoom</options>
-    </wallpaper>
-
 </wallpapers>
