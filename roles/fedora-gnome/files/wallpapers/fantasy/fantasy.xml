@@ -3,8 +3,8 @@
 <wallpapers>
     <wallpaper deleted="false">
         <name>00 fantasy</name>
-        <filename>/usr/share/backgrounds/fantasy/day.png</filename>
-        <filename-dark>/usr/share/backgrounds/fantasy/evening.png</filename-dark>
+        <filename>/usr/share/backgrounds/fantasy/day.avif</filename>
+        <filename-dark>/usr/share/backgrounds/fantasy/evening.avif</filename-dark>
         <options>zoom</options>
         <shade_type>solid</shade_type>
         <pcolor>#3465a4</pcolor>
