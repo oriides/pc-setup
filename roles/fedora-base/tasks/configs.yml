@@ -145,6 +145,7 @@
     group: root
   with_items:
     - delete-downloads
+    - update-bluray-aacs-db
 
 - name: "configs : Enable cron service"
   become: true

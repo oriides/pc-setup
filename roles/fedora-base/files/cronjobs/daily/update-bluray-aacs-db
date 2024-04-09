@@ -1,0 +1,90 @@
+#!/bin/bash
+
+# This is a simple bash script, designed to allow
+# quick download and installation of the FindVUK
+# AACS VUK database.
+#
+# This allows Blu-Ray disks who's VUK is known
+# to be played on systems using libaacs.
+#
+# It's reccomended to schedule this file to run
+# once or twice daily, in order to keep your 
+# KEYDB.cfg up-to-date.
+#
+# NOTE:
+# This *does not* provide the files needed to
+# properly decone the small number of disks that
+# use BD+.
+#
+# Created by T.I. "Luna" Ericson.
+
+tmpname="$(mktemp).zip"
+if [ "$1" = "-l" ]
+then
+	target="$HOME/.config/aacs"
+else
+	if [ "$(id -u)" -ne 0 ]
+	then
+		>&2 echo "Superuser privileges required for glabal update."
+		>&2 echo "Try '-l' to update the local database, or run as root."
+		exit 1
+	fi
+	target="/etc/xdg/aacs"
+fi
+
+echo "Attempting to fetch database from FindVUK:"
+echo "This make take some time."
+for i in {1..6}
+do
+	echo "Try ${i}."
+	if wget -q --show-progress --timeout=15 -t 1 --continue -O "${tmpname}" http://fvonline-db.bplaced.net/fv_download.php?lang=eng
+	then
+		break
+	fi
+
+	if [ "$i" -eq 6 ]
+	then
+		>&2 echo "Failed to download database!"
+		>&2 echo "Please try again later."
+		exit 1
+	fi
+	echo "Failed! Retrying..."
+	sleep 5
+done
+
+if ! [ -d "$target" ]
+then
+	echo -e "\nDirectory \"${target}\" is missing!"
+	echo "Creating \"${target}\"..."
+	mkdir -p "$target" || exit 1
+fi
+
+cd "$target" || (>&2 echo -e "\n Failed to switch directory to \"${target}\""; exit 1)
+if ! unzip "${tmpname}"
+then
+	>&2 echo -e "\nFailed to open archive!"
+	exit 1
+fi
+
+# Check is a device key header file is present
+# Otherwise, just install the VUK database.
+if [ -f key_header ]
+then
+	echo -e "\nFound key_header in \"${target}\"."
+	cp -f key_header KEYDB.cfg
+	cat keydb.cfg >> KEYDB.cfg
+	rm -f keydb.cfg
+else
+	echo -e "\nNot key_header found."
+	echo "Onky the VUK database will be installed."
+	mv -f keydb.cfg KEYDB.cfg
+fi
+
+if ! [ "$1" = "-l" ]
+then
+     chmod -R a+r "$target"
+fi
+
+echo -e "\nAACS database is up-to-date."
+
+exit 0
