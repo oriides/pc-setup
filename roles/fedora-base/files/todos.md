@@ -19,11 +19,12 @@ Compile and install torchlight
 - Veracrypt
 - UxPlay
 - SOPS
+- k9s
 
 ## Please manually install some PWAs through Chrome/ Chromium/ Chromium Based Browser
 
 - [YouTube Music](https://music.youtube.com)
-- [Trello (TODOs)](https://trello.com/b/C2vdIkd0/todo-liste)
+- [Todoist](https://app.todoist.com/app)
 - [Google Drive](https://drive.google.com)
 - [Google Photos](https://photos.google.com)
 - [Google Messages](https://messages.google.com/web)
@@ -35,7 +36,7 @@ Compile and install torchlight
 ## Please manually install these GNOME Extensions
 
 - [Blur my Shell](https://extensions.gnome.org/extension/3193/blur-my-shell/)
-- [AppIndicator and KStatusNotifierItem Support](https://extensions.gnome.org/extension/615/appindicator-support/)
+<!-- - [AppIndicator and KStatusNotifierItem Support](https://extensions.gnome.org/extension/615/appindicator-support/) -->
 - [Dash to Dock](https://extensions.gnome.org/extension/307/dash-to-dock/)
 - [ddterm](https://extensions.gnome.org/extension/3780/ddterm/)
 - [gsconnect](https://extensions.gnome.org/extension/1319/gsconnect/)
