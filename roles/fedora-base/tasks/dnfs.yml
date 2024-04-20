@@ -18,19 +18,19 @@
       defaultyes=True
     dest: /etc/dnf/dnf.conf
 
-# FIXME: this is broken
 - name: "dnf : Install RPM Fusion free repository"
   become: true
   dnf:
     name: "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_facts['distribution_major_version'] }}.noarch.rpm"
     state: present
+    disable_gpg_check: true
 
-# FIXME: this is broken
 - name: "dnf : Install RPM Fusion nonfree repository"
   become: true
   dnf:
     name: "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_facts['distribution_major_version'] }}.noarch.rpm"
     state: present
+    disable_gpg_check: true
 
 ################################################################################
 ### 3rd-party repositories
