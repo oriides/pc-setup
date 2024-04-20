@@ -15,7 +15,7 @@ sudo dnf install -y ansible
 ################################################################################
 ### get git credentials
 
-source ./scripts/git-config.sh
+source ./scripts/git-config-variables.sh
 
 ################################################################################
 ### run ansible playbook

@@ -29,10 +29,3 @@ if [[ -z "${GIT_EMAIL+x}" ]]; then
 else
   echo "> Git email already set to \"$GIT_EMAIL\"" 
 fi
-
-# ## globally sets git username and email
-# git config --global user.name "$GIT_NAME"
-# git config --global user.email $GIT_EMAIL
-
-# ## set default pull/rebase strategy
-# git config --global pull.rebase true
