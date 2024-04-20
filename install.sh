@@ -23,14 +23,8 @@ source ./scripts/git-config.sh
 notify-send -i dialog-information "Starting installation…" "Running Ansible Playbook…"
 
 ansible-galaxy collection install community.general
-ansible-playbook site.yml -i inventory --ask-become-pass
+ansible-playbook site.yml --inventory inventory --ask-become-pass
 
-################################################################################
-### configure oh-my-zsh
-
-notify-send -i dialog-information "Configuring oh-my-zsh…" "Installing plugins and themes…"
-
-./scripts/zsh-config.sh
 
 ################################################################################
 

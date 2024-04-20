@@ -1,41 +1,74 @@
 ################################################################################
 ### Configure git
 
-- name: "configs : configure git username"
+- name: "configs : Configure git username"
   community.general.git_config:
     name: user.name
     scope: global
     value: "{{ lookup('ansible.builtin.env', 'GIT_NAME', default='nobody') }}"
 
-- name: "configs : configure git email"
+- name: "configs : Configure git email"
   community.general.git_config:
     name: user.email
     scope: global
     value: "{{ lookup('ansible.builtin.env', 'GIT_EMAIL', default='nobody@example.com') }}"
 
-- name: "configs : configure git pull/rebase strategy"
+- name: "configs : Configure git pull/rebase strategy"
   community.general.git_config:
     name: pull.rebase # With rebasing, new commits will be created for the changes on your local branch that start after the changes on the remote branch instead of creating a merge commit.
     scope: global
     value: true
 
-- name: "configs : configure git fetch prune option"
+- name: "configs : Configure git fetch prune option"
   community.general.git_config:
     name: fetch.prune # This configuration will automatically clean Git objects in your repository locally whenever you fetch changes from remote.
     scope: global
     value: true
 
-- name: "configs : configure git rerere option"
+- name: "configs : Configure git rerere option"
   community.general.git_config:
     name: rerere.enabled # This configuration enables merge conflict resolution recording.
     scope: global
     value: true
 
-- name: "configs : configure git nah alias"
+- name: "configs : Configure git nah alias"
   community.general.git_config:
     name: alias.nah # This alias completely cleans the current repo
     scope: global
     value: '!f(){ echo -n "Are you sure? (y/N) "; read choice; if [[ "$choice" == "y" || "$choice" == "Y" ]]; then git reset --hard; git clean -df; if [ -d ".git/rebase-apply" ] || [ -d ".git/rebase-merge" ]; then git rebase --abort; fi; else echo "Operation canceled"; return 0; fi; }; f'
+
+################################################################################
+### Configure zsh & oh-my-zsh
+
+- name: "configs : Set zsh as default shell"
+  become: true
+  user:
+    name: "{{ ansible_user }}"
+    shell: "/usr/bin/zsh"
+  vars:
+    ansible_user: "{{ lookup('env', 'USER') }}"
+
+
+- block:
+    - name: "configs : Install oh-my-zsh - Step 1/2"
+      get_url:
+        url: https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+        dest: /tmp/install_ohmyzsh.sh
+    - name: "configs : install oh-my-zsh - Step 1/2"
+      command: sh /tmp/install_ohmyzsh.sh --unattended
+      register: ohmyzsh_result
+      failed_when: "'FAILED' in ohmyzsh_result.stderr"
+
+- name: "configs : Install Powerlevel10k for oh-my-zsh"
+  git:
+    repo: "https://github.com/romkatv/powerlevel10k.git"
+    dest: ~/.oh-my-zsh/custom/themes/powerlevel10k
+    depth: 1
+
+- name: "configs : Install zsh-autosuggestions for oh-my-zsh"
+  git:
+    repo: "https://github.com/zsh-users/zsh-autosuggestions"
+    dest: ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 
 ################################################################################
 ### Install Rust
@@ -121,6 +154,11 @@
   copy:
     src: "{{ role_path }}/files/dotfiles/.vimrc"
     dest: "~/.vimrc"
+
+- name: "configs : Install .p10k.zsh"
+  copy:
+    src: "{{ role_path }}/files/dotfiles/.p10k.zsh"
+    dest: "~/.p10k.zsh"
 
 ################################################################################
 ### Copy user configs

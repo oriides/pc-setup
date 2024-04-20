@@ -92,3 +92,10 @@ GPU hardware on a fedora system.
   setup fingerprint authentication, simply authenticate with your fingerprint
   even if you are not prompted to. [This is a bug with
   ansible](https://github.com/ansible/ansible/issues/73308).
+
+You can test the Ansible Playbook using the `--check` flag when calling the
+Ansible Playbook command, like so:
+
+```bash
+ansible-playbook site.yml --inventory inventory --ask-become-pass --check
+```
