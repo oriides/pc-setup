@@ -36,7 +36,6 @@ Compile and install torchlight
 ## Please manually install these GNOME Extensions
 
 - [Blur my Shell](https://extensions.gnome.org/extension/3193/blur-my-shell/)
-<!-- - [AppIndicator and KStatusNotifierItem Support](https://extensions.gnome.org/extension/615/appindicator-support/) -->
 - [Dash to Dock](https://extensions.gnome.org/extension/307/dash-to-dock/)
 - [ddterm](https://extensions.gnome.org/extension/3780/ddterm/)
 - [gsconnect](https://extensions.gnome.org/extension/1319/gsconnect/)
@@ -44,4 +43,3 @@ Compile and install torchlight
 - [Night Theme Switcher](https://extensions.gnome.org/extension/2236/night-theme-switcher/)
 - [Pano - Clipboard Manager](https://extensions.gnome.org/extension/5278/pano/)
 - [Removable Drive Menu](https://extensions.gnome.org/extension/7/removable-drive-menu/)
-- [Tiling Assistant](https://extensions.gnome.org/extension/3733/tiling-assistant/)
