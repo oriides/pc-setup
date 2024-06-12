@@ -94,7 +94,7 @@
     - lldb # llvm (debugger)
     - mangohud # vulkan performance monitor
     - fastfetch # system information
-    - nodejs
+    - nodejs # nodejs
     - openssl # ssl
     - openssl-devel # ssl
     - podman-compose # podman alias for docker compose
