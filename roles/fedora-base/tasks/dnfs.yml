@@ -93,7 +93,7 @@
     - llvm # llvm
     - lldb # llvm (debugger)
     - mangohud # vulkan performance monitor
-    - neofetch # system information
+    - fastfetch # system information
     - nodejs
     - openssl # ssl
     - openssl-devel # ssl
