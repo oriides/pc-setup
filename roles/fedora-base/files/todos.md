@@ -41,5 +41,5 @@ Compile and install torchlight
 - [gsconnect](https://extensions.gnome.org/extension/1319/gsconnect/)
 - [Just Perfection](https://extensions.gnome.org/extension/3843/just-perfection/)
 - [Night Theme Switcher](https://extensions.gnome.org/extension/2236/night-theme-switcher/)
-- [Pano - Clipboard Manager](https://extensions.gnome.org/extension/5278/pano/)
+<!-- - [Pano - Clipboard Manager](https://extensions.gnome.org/extension/5278/pano/) -->
 - [Removable Drive Menu](https://extensions.gnome.org/extension/7/removable-drive-menu/)

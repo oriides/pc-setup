@@ -78,6 +78,13 @@
     rustup-init -y
 
 ################################################################################
+### Install Starship prompt using cargo
+
+- name: "configs : Install Starship Prompt (using cargo)"
+  shell: |
+    cargo install starship --locked
+
+################################################################################
 ### Suppress podman-docker warning
 
 - name: "configs : Suppress podman-docker warning"
@@ -170,6 +177,7 @@
   with_items:
     - MangoHud
     - solaar
+    - starship.toml
 
 ################################################################################
 ### Configure cron

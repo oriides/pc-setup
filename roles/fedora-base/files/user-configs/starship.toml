@@ -1,0 +1,170 @@
+"$schema" = "https://starship.rs/config-schema.json"
+
+format = """$os \
+$directory\
+$git_branch\
+$git_status\
+$container\
+$character """
+
+right_format = """$status$golang$java$lua$nodejs$python$rust$kubernetes"""
+
+################################################################################
+### Colors
+
+palette = "github"
+
+[palettes.github]
+color_transparent = "#00000000"
+color_white = "#ffffff"
+color_black = "#000000"
+color_blue = "#6CA4F8"
+color_aqua = "#2B7489"
+color_green = "#56D364"
+color_yellow = "#E3B341"
+color_purple = "#A788F7"
+color_red = "#F78166"
+
+################################################################################
+### Plugin configs
+
+[os]
+disabled = false
+style = "fg:color_white bg:color_transparent"
+
+[os.symbols]
+Windows = "󰍲"
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = "󰀵"
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = ""
+Alpine = ""
+Amazon = ""
+Android = ""
+Arch = "󰣇"
+Artix = "󰣇"
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+
+[directory]
+disabled = false
+style = "fg:color_blue bg:color_transparent"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+read_only = ""
+
+[directory.substitutions]
+"Documents" = "󰈙"
+"Downloads" = ""
+"Music" = "󰝚"
+"Pictures" = ""
+"Development" = "󰲋"
+
+[git_branch]
+disabled = false
+symbol = ""
+style = "fg:color_green bg:color_transparent"
+format = "[$symbol $branch ]($style)"
+
+[git_status]
+disabled = false
+style = "fg:color_green bg:color_transparent"
+format = "[[($all_status$ahead_behind )](fg:color_yellow bg:color_transparent)]($style)"
+
+[container]
+disabled = false
+symbol = "⬢"
+style = "fg:color_yellow bg:color_transparent"
+format = "[$symbol $name ]($style)"
+
+[character]
+disabled = false
+success_symbol = "[❯](bold fg:color_green)"
+error_symbol = "[❯](bold fg:color_red)"
+vimcmd_symbol = "[](bold fg:color_green)"
+vimcmd_replace_one_symbol = "[](bold fg:color_purple)"
+vimcmd_replace_symbol = "[](bold fg:color_purple)"
+vimcmd_visual_symbol = "[](bold fg:color_yellow)"
+
+################################################################################
+### Right aligned info
+
+[status]
+disabled = false
+symbol = ""
+style = "fg:color_red bg:color_transparent"
+format = "[$symbol $status]($style) | "
+map_symbol = true
+sigint_symbol = ""
+not_executable_symbol = ""
+not_found_symbol = ""
+signal_symbol = ""
+
+[kubernetes]
+disabled = false
+symbol = "󱃾"
+style = "fg:color_purple bg:color_transparent"
+format = "[$symbol $context ]($style)"
+detect_env_vars = ["KUBECONFIG"]
+
+################################################################################
+### Programming language version info
+
+[golang]
+detect_extensions = ["go"]
+detect_files = ["go.mod", "go.sum", "go.work", "glide.yaml", "Gopkg.yml", "Gopkg.lock", ".go-version"]
+detect_folders = ["Godeps"]
+disabled = false
+format = "[$symbol $version]($style) "
+style = "fg:color_yellow bg:color_transparent"
+symbol = "󰟓"
+
+[java]
+detect_extensions = ["java", "class", "gradle", "jar"]
+detect_files = ["pom.xml", "build.gradle.kts", "build.sbt", ".java-version", "deps.edn", "project.clj", "build.boot", ".sdkmanrc"]
+disabled = false
+format = "[$symbol $version]($style) "
+style = "fg:color_yellow bg:color_transparent"
+symbol = "󰅶"
+
+[lua]
+detect_extensions = ["lua"]
+detect_files = [".lua-version"]
+detect_folders = ["lua"]
+disabled = false
+format = "[$symbol $version]($style) "
+style = "fg:color_yellow bg:color_transparent"
+symbol = "󰢱"
+
+[nodejs]
+detect_files = ["package.json", ".node-version"]
+detect_extensions = ["js", "mjs", "cjs", "ts", "mts", "cts"]
+detect_folders = ["node_modules"]
+disabled = false
+format = "[$symbol $version]($style) "
+style = "fg:color_yellow bg:color_transparent"
+symbol = "󰌞"
+
+[python]
+detect_extensions = ["py"]
+detect_files = [".python-version", "Pipfile", "__init__.py", "pyproject.toml", "requirements.txt", "setup.py", "tox.ini"]
+disabled = false
+format = "[$symbol $version]($style) "
+style = "fg:color_yellow bg:color_transparent"
+symbol = "󰌠"
+
+[rust]
+detect_extensions = ["rs"]
+detect_files = ["Cargo.toml"]
+disabled = false
+format = "[$symbol $version]($style) "
+style = "fg:color_yellow bg:color_transparent"
+symbol = "󱘗"
