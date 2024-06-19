@@ -59,12 +59,6 @@
       register: ohmyzsh_result
       failed_when: "'FAILED' in ohmyzsh_result.stderr"
 
-- name: "configs : Install Powerlevel10k for oh-my-zsh"
-  git:
-    repo: "https://github.com/romkatv/powerlevel10k.git"
-    dest: ~/.oh-my-zsh/custom/themes/powerlevel10k
-    depth: 1
-
 - name: "configs : Install zsh-autosuggestions for oh-my-zsh"
   git:
     repo: "https://github.com/zsh-users/zsh-autosuggestions"
@@ -132,7 +126,7 @@
     - Space Grotesk
     - Space Mono
 
-- name: "configs : Install Nerd Fonts" # for powerlevel10k # TODO: keep release version up to date
+- name: "configs : Install Nerd Fonts" # for powerline # TODO: keep release version up to date
   become: true
   shell: |
     wget -O "/tmp/{{ item }}.zip" "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/{{ item | urlencode }}.zip"
@@ -161,11 +155,6 @@
   copy:
     src: "{{ role_path }}/files/dotfiles/.vimrc"
     dest: "~/.vimrc"
-
-- name: "configs : Install .p10k.zsh"
-  copy:
-    src: "{{ role_path }}/files/dotfiles/.p10k.zsh"
-    dest: "~/.p10k.zsh"
 
 ################################################################################
 ### Copy user configs
