@@ -206,13 +206,11 @@
     owner: root
     group: root
   with_items:
-    - central-executive
+    - blender
     - chroma_blue
     - desert
     - f36
     - f39
-    - fantasy
-    - WWDC_2019
     - zelda
 
 ################################################################################
