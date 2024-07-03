@@ -2,9 +2,9 @@
 <!DOCTYPE wallpapers SYSTEM "gnome-wp-list.dtd">
 <wallpapers>
     <wallpaper deleted="false">
-        <name>00 fantasy</name>
-        <filename>/usr/share/backgrounds/fantasy/day.avif</filename>
-        <filename-dark>/usr/share/backgrounds/fantasy/evening.avif</filename-dark>
+        <name>00 blender</name>
+        <filename>/usr/share/backgrounds/blender/day.avif</filename>
+        <filename-dark>/usr/share/backgrounds/blender/evening.avif</filename-dark>
         <options>zoom</options>
         <shade_type>solid</shade_type>
         <pcolor>#3465a4</pcolor>
@@ -12,8 +12,8 @@
     </wallpaper>
 
     <wallpaper deleted="false">
-        <name>00 Fantasy Time of Day</name>
-        <filename>/usr/share/backgrounds/fantasy/fantasy.xml</filename>
+        <name>00 Blender Time of Day</name>
+        <filename>/usr/share/backgrounds/blender/blender.xml</filename>
         <options>zoom</options>
     </wallpaper>
 

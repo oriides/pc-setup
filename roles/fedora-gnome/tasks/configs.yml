@@ -9,12 +9,11 @@
     owner: root
     group: root
   with_items:
-    - central-executive
-    - central-executive-hiss
+    - blender
     - chroma_blue
     - desert
-    - fantasy
-    - WWDC_2019
+    - f36
+    - f39
     - zelda
 
 ################################################################################
