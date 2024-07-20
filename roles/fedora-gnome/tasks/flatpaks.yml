@@ -16,13 +16,13 @@
     state: present
   with_items:
     - org.gtk.Gtk3theme.adw-gtk3-dark # adw-gtk3 Theme
-    - io.bassi.Amberol # Amberol music player
     - com.usebottles.bottles # Bottles
     - ca.desrt.dconf-editor # dconf Editor
     - me.dusansimic.DynamicWallpaper # Dynamic Wallpaper Generator
     - com.mattjakeman.ExtensionManager # Extension Manager
     - org.gnome.Firmware # Firmware
     - com.github.johnfactotum.Foliate # Foliate (eBook reader)
+    - com.github.neithern.g4music # Gapless (Music Player)
     - io.github.nokse22.inspector # Inspector
     - io.missioncenter.MissionCenter # Mission Center (System Monitor)
     - org.gnome.World.PikaBackup # Pika Backup
