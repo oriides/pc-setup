@@ -114,6 +114,8 @@
   with_items:
     #  - "@multimedia" # multimedia codec group
     - libheif # HEIC/HEIF support
+    - libheif-freeworld # HEIC/HEIF support
+    - heif-pixbuf-loader # HEIC/HEIF support
     - lame # lame (mp3) audio codec
     - libva # video acceleration (VAAPI)
     - libva-utils # video acceleration (VAAPI)
