@@ -52,10 +52,8 @@
     src: "{{ role_path }}/files/yum-repos/{{ item }}.repo"
     dest: "/etc/yum.repos.d/{{ item }}.repo"
   with_items:
-    - google-chrome
     - google-cloud-sdk
     - insync
-    # - vivaldi
     - vscode
 
 - name: "dnf : Enable COPR repositories"
@@ -88,6 +86,7 @@
     - google-cloud-cli-gke-gcloud-auth-plugin # gcloud KMS plugin
     - gti # fun git easter egg
     - helm # k8s package manager
+    - java-latest-openjdk # java
     - kubernetes # k8s utilities
     - llvm # llvm
     - lldb # llvm (debugger)
@@ -105,6 +104,17 @@
     - tokei # code/file statistics
     - toolbox # container environments
     - zsh # zsh
+    - zsh-autosuggestions # zsh autosuggestions
+
+- name: "dnf : Install proper ffmpeg"
+  become: true
+  dnf:
+    name: "{{ item }}"
+    state: present
+    allowerasing: true
+  with_items:
+    - ffmpeg
+    - ffmpeg-libs
 
 - name: "dnf : Install multimedia dependencies & codecs"
   become: true
@@ -112,7 +122,6 @@
     name: "{{ item }}"
     state: present
   with_items:
-    #  - "@multimedia" # multimedia codec group
     - libheif # HEIC/HEIF support
     - libheif-freeworld # HEIC/HEIF support
     - heif-pixbuf-loader # HEIC/HEIF support
@@ -123,9 +132,7 @@
     - gstreamer1-plugins-base # gstreamer multimedia codecs
     - gstreamer1-plugins-bad* # gstreamer multimedia codecs
     - gstreamer1-plugins-good* # gstreamer multimedia codecs
-    # - ffmpeg # ffmpeg AV transcoder
-    # - ffmpeg-libs # ffmpeg AV transcoder
-    - ffmpeg-free # ffmpeg AV transcoder
+    - gstreamer1-plugins-ugly* # gstreamer multimedia codecs
 
 - name: "dnf : Install applications"
   become: true
@@ -134,8 +141,10 @@
     state: present
   with_items:
     - code # Visual Studio Code
-    - google-chrome-stable # Google Chrome
+    - chromium # Google Chrome
+    - firefox # Firefox
     - insync # Insync
+    - mpv # mpv media player
     - scrcpy # Android screen mirroring
     - solaar # Logitech peripherals manager
     - steam # Steam

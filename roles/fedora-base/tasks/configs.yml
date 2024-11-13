@@ -48,21 +48,15 @@
   vars:
     ansible_user: "{{ lookup('env', 'USER') }}"
 
-
 - block:
     - name: "configs : Install oh-my-zsh - Step 1/2"
       get_url:
         url: https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
         dest: /tmp/install_ohmyzsh.sh
-    - name: "configs : install oh-my-zsh - Step 1/2"
+    - name: "configs : install oh-my-zsh - Step 2/2"
       command: sh /tmp/install_ohmyzsh.sh --unattended
       register: ohmyzsh_result
       failed_when: "'FAILED' in ohmyzsh_result.stderr"
-
-- name: "configs : Install zsh-autosuggestions for oh-my-zsh"
-  git:
-    repo: "https://github.com/zsh-users/zsh-autosuggestions"
-    dest: ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 
 ################################################################################
 ### Install Rust
@@ -119,18 +113,18 @@
   with_items:
     - IBM Plex Sans
     - IBM Plex Serif
+    - Inter
     - Lexend
     - Montserrat
     - Outfit
     - Raleway
-    - Shippori Mincho
     - Space Grotesk
     - Space Mono
 
 - name: "configs : Install Nerd Fonts" # for powerline # TODO: keep release version up to date
   become: true
   shell: |
-    wget -O "/tmp/{{ item }}.zip" "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/{{ item | urlencode }}.zip"
+    wget -O "/tmp/{{ item }}.zip" "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/{{ item | urlencode }}.zip"
     unzip "/tmp/{{ item }}.zip" -d "/tmp/NF_{{ item }}"
     sudo chown -R root:root "/tmp/NF_{{ item }}"
     sudo cp -R "/tmp/NF_{{ item }}" "/usr/share/fonts/"

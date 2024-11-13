@@ -24,12 +24,14 @@ Compile and install torchlight
 ## Please manually install some PWAs through Chrome/ Chromium/ Chromium Based Browser
 
 - [YouTube Music](https://music.youtube.com)
+- [ARD Audiothek](https://www.ardaudiothek.de/)
 - [Todoist](https://app.todoist.com/app)
 - [Google Drive](https://drive.google.com)
 - [Google Photos](https://photos.google.com)
-- [Google Messages](https://messages.google.com/web)
 - [Diagrams.net](https://app.diagrams.net)
 - [Discord](https://discord.com/app)
+- [TMDB](https://www.themoviedb.org/)
+- [WhatsApp Web](https://web.whatsapp.com/)
 - Google Docs suite (Just shortcuts)
 - Teams & Outlook for work
 
