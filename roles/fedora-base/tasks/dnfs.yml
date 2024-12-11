@@ -40,10 +40,8 @@
     key: "{{ item }}"
     state: present
   with_items:
-    - https://dl.google.com/linux/linux_signing_key.pub # Google (Chrome)
     - https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg # Google (Cloud SDK)
     - https://d2t3ff60b2tol4.cloudfront.net/repomd.xml.key # Insync
-    # - https://repo.vivaldi.com/archive/linux_signing_key.pub # Vivaldi
     - https://packages.microsoft.com/keys/microsoft.asc # VSCode
 
 - name: "dnf : Copy repository files"
@@ -98,13 +96,13 @@
     - podman-compose # podman alias for docker compose
     - podman-docker # podman alias for docker
     - powerline # powerline
+    - uxplay # AirPlay server
     - vim-powerline # powerline
     - rustup # rust toolchain installer
     - sl # fun ls easter egg
     - tokei # code/file statistics
     - toolbox # container environments
     - zsh # zsh
-    - zsh-autosuggestions # zsh autosuggestions
 
 - name: "dnf : Install proper ffmpeg"
   become: true
