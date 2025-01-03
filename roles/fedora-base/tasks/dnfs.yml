@@ -122,6 +122,7 @@
   with_items:
     - libheif # HEIC/HEIF support
     - libheif-freeworld # HEIC/HEIF support
+    - libheif-tools # HEIC/HEIF support
     - heif-pixbuf-loader # HEIC/HEIF support
     - lame # lame (mp3) audio codec
     - libva # video acceleration (VAAPI)
