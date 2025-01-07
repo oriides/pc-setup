@@ -160,6 +160,7 @@
     dest: "~/.config/"
   with_items:
     - MangoHud
+    - mpv
     - solaar
     - starship.toml
 
