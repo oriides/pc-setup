@@ -178,6 +178,16 @@
     - delete-downloads
     - update-bluray-aacs-db
 
+- name: "configs : Install cron jobs (weekly)"
+  become: true
+  copy:
+    src: "{{ role_path }}/files/cronjobs/weekly/{{ item }}"
+    dest: "/etc/cron.weekly/"
+    owner: root
+    group: root
+  with_items:
+    - prune-unused-containers
+
 - name: "configs : Enable cron service"
   become: true
   service:
