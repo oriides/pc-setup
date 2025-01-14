@@ -37,6 +37,12 @@
     scope: global
     value: '!f(){ echo -n "Are you sure? (y/N) "; read choice; if [[ "$choice" == "y" || "$choice" == "Y" ]]; then git reset --hard; git clean -df; if [ -d ".git/rebase-apply" ] || [ -d ".git/rebase-merge" ]; then git rebase --abort; fi; else echo "Operation canceled"; return 0; fi; }; f'
 
+- name: "configs : Configure git graph alias"
+  community.general.git_config:
+    name: alias.graph # This alias shows a nice commit graph
+    scope: global
+    value: 'log --oneline --decorate --graph --all'
+
 ################################################################################
 ### Configure zsh & oh-my-zsh
 
