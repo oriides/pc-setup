@@ -4,10 +4,18 @@ format = """$os \
 $directory\
 $git_branch\
 $git_status\
+$fill\
+$status\
+$golang\
+$java\
+$lua\
+$nodejs\
+$python\
+$rust\
+$kubernetes\
+$line_break\
 $container\
 $character """
-
-right_format = """$status$golang$java$lua$nodejs$python$rust$kubernetes"""
 
 ################################################################################
 ### Colors
@@ -57,7 +65,7 @@ RedHatEnterprise = "󱄛"
 disabled = false
 style = "fg:color_blue bg:color_transparent"
 format = "[ $path ]($style)"
-truncation_length = 3
+truncation_length = 4
 truncation_symbol = "…/"
 read_only = ""
 
@@ -79,11 +87,19 @@ disabled = false
 style = "fg:color_green bg:color_transparent"
 format = "[[($all_status$ahead_behind )](fg:color_yellow bg:color_transparent)]($style)"
 
+[fill]
+disabled = false
+symbol = " "
+style = "fg:color_green bg:color_transparent"
+
 [container]
 disabled = false
 symbol = "⬢"
 style = "fg:color_yellow bg:color_transparent"
 format = "[$symbol $name ]($style)"
+
+[line_break]
+disabled = false
 
 [character]
 disabled = false
@@ -120,7 +136,15 @@ detect_env_vars = ["KUBECONFIG"]
 
 [golang]
 detect_extensions = ["go"]
-detect_files = ["go.mod", "go.sum", "go.work", "glide.yaml", "Gopkg.yml", "Gopkg.lock", ".go-version"]
+detect_files = [
+    "go.mod",
+    "go.sum",
+    "go.work",
+    "glide.yaml",
+    "Gopkg.yml",
+    "Gopkg.lock",
+    ".go-version",
+]
 detect_folders = ["Godeps"]
 disabled = false
 format = "[$symbol $version]($style) "
@@ -129,7 +153,16 @@ symbol = "󰟓"
 
 [java]
 detect_extensions = ["java", "class", "gradle", "jar"]
-detect_files = ["pom.xml", "build.gradle.kts", "build.sbt", ".java-version", "deps.edn", "project.clj", "build.boot", ".sdkmanrc"]
+detect_files = [
+    "pom.xml",
+    "build.gradle.kts",
+    "build.sbt",
+    ".java-version",
+    "deps.edn",
+    "project.clj",
+    "build.boot",
+    ".sdkmanrc",
+]
 disabled = false
 format = "[$symbol $version]($style) "
 style = "fg:color_yellow bg:color_transparent"
@@ -155,7 +188,15 @@ symbol = "󰌞"
 
 [python]
 detect_extensions = ["py"]
-detect_files = [".python-version", "Pipfile", "__init__.py", "pyproject.toml", "requirements.txt", "setup.py", "tox.ini"]
+detect_files = [
+    ".python-version",
+    "Pipfile",
+    "__init__.py",
+    "pyproject.toml",
+    "requirements.txt",
+    "setup.py",
+    "tox.ini",
+]
 disabled = false
 format = "[$symbol $version]($style) "
 style = "fg:color_yellow bg:color_transparent"
