@@ -1,6 +1,7 @@
 "$schema" = "https://starship.rs/config-schema.json"
 
 format = """$os \
+$username@$hostname\
 $directory\
 $git_branch\
 $git_status\
@@ -60,6 +61,20 @@ CentOS = ""
 Debian = "󰣚"
 Redhat = "󱄛"
 RedHatEnterprise = "󱄛"
+
+[username]
+disabled = false
+style_user = "fg:color_white bg:color_transparent"
+style_root = "fg:color_red bg:color_transparent"
+format = "[ $user]($style)"
+show_always = true
+
+[hostname]
+disabled = false
+style = "fg:color_white bg:color_transparent"
+format = "[$hostname$ssh_symbol]($style)"
+ssh_symbol = " (󰣀)"
+ssh_only = false
 
 [directory]
 disabled = false
