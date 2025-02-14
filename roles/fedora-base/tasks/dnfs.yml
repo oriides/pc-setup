@@ -90,6 +90,7 @@
     - lldb # llvm (debugger)
     - mangohud # vulkan performance monitor
     - fastfetch # system information
+    - fzf # fuzzy finder
     - nodejs # nodejs
     - openssl # ssl
     - openssl-devel # ssl
