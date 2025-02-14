@@ -14,6 +14,7 @@ plugins=(
   podman
   rust
   toolbox
+  fzf-tab
   zsh-autosuggestions
 )
 

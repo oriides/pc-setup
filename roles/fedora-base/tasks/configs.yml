@@ -41,7 +41,7 @@
   community.general.git_config:
     name: alias.graph # This alias shows a nice commit graph
     scope: global
-    value: 'log --oneline --decorate --graph --all'
+    value: "log --oneline --decorate --graph --all"
 
 ################################################################################
 ### Configure zsh & oh-my-zsh
@@ -63,6 +63,18 @@
       command: sh /tmp/install_ohmyzsh.sh --unattended
       register: ohmyzsh_result
       failed_when: "'FAILED' in ohmyzsh_result.stderr"
+
+- name: "configs: Install oh-my-zsh plugins"
+  git:
+    repo: "{{ item.repo }}"
+    dest: "{{ item.dest }}"
+  loop:
+    - repo: "https://github.com/zsh-users/zsh-autosuggestions"
+      dest: "{{ ansible_env.HOME }}/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
+    - repo: "https://github.com/Aloxaf/fzf-tab"
+      dest: "{{ ansible_env.HOME }}/.oh-my-zsh/custom/plugins/fzf-tab"
+    # - repo: "https://github.com/zsh-users/zsh-syntax-highlighting"
+    #   dest: "{{ ansible_env.HOME }}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
 
 ################################################################################
 ### Install Rust
