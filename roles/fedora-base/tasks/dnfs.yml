@@ -75,7 +75,8 @@
     - "@virtualization" # supplementary virtualization programs
     - bottom # process and usage explorer
     - clang # clang
-    - cronie # cron
+    - cronie # cron # TODO: consider using systemd timers instead of cron
+    - cronie-anacron # cron (anacron)
     - dnf-plugins-core # additional dnf plugins
     - gamescope # micro-compositor
     - git # git

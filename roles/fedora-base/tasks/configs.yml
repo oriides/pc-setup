@@ -184,6 +184,7 @@
 
 ################################################################################
 ### Configure cron
+# TODO: consider using systemd timers instead of cron
 
 - name: "configs : Install cron jobs (daily)"
   become: true
@@ -192,9 +193,9 @@
     dest: "/etc/cron.daily/"
     owner: root
     group: root
+    mode: 0755
   with_items:
     - delete-downloads
-    - update-bluray-aacs-db
 
 # Warning! This breaks toolbox containers
 # - name: "configs : Install cron jobs (weekly)"
@@ -204,6 +205,7 @@
 #     dest: "/etc/cron.weekly/"
 #     owner: root
 #     group: root
+#     mode: 0755
 #   with_items:
 #     - prune-unused-containers
 
