@@ -31,6 +31,18 @@
     state: present
     disable_gpg_check: true
 
+- name: "dnf : Install k3s-common repository"
+  become: true
+  copy:
+    content: |
+      [rancher-k3s-common-latest]
+      name=Rancher k3s Common Latest
+      baseurl=https://rpm.rancher.io/k3s/latest/common/coreos/noarch
+      enabled=1
+      gpgcheck=1
+      gpgkey=https://rpm.rancher.io/public.key
+    dest: /etc/yum.repos.d/rancher-k3s-common-latest.repo
+
 ################################################################################
 ### 3rd-party repositories
 
