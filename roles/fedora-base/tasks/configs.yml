@@ -177,6 +177,7 @@
     src: "{{ role_path }}/files/user-configs/{{ item }}"
     dest: "~/.config/"
   with_items:
+    - k9s
     - MangoHud
     - mpv
     - solaar
