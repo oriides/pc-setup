@@ -5,13 +5,13 @@
   community.general.git_config:
     name: user.name
     scope: global
-    value: "{{ lookup('ansible.builtin.env', 'GIT_NAME', default='nobody') }}"
+    value: "{{ lookup('env', 'GIT_NAME', default='nobody') }}"
 
 - name: "configs : Configure git email"
   community.general.git_config:
     name: user.email
     scope: global
-    value: "{{ lookup('ansible.builtin.env', 'GIT_EMAIL', default='nobody@example.com') }}"
+    value: "{{ lookup('env', 'GIT_EMAIL', default='nobody@example.com') }}"
 
 - name: "configs : Configure git pull/rebase strategy"
   community.general.git_config:
@@ -137,12 +137,11 @@
     - Outfit
     - Raleway
     - Space Grotesk
-    - Space Mono
 
 - name: "configs : Install Nerd Fonts" # for powerline # TODO: keep release version up to date
   become: true
   shell: |
-    wget -O "/tmp/{{ item }}.zip" "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/{{ item | urlencode }}.zip"
+    wget -O "/tmp/{{ item }}.zip" "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/{{ item | urlencode }}.zip"
     unzip "/tmp/{{ item }}.zip" -d "/tmp/NF_{{ item }}"
     sudo chown -R root:root "/tmp/NF_{{ item }}"
     sudo cp -R "/tmp/NF_{{ item }}" "/usr/share/fonts/"

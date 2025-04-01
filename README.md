@@ -8,7 +8,10 @@ Ansible playbook for setting up my personal PC
    to the PC.
 2. [Optional] Change the host name in the [`site.yml`](site.yml) and
    [`inventory`](inventory) files
-3. Run the [`install.sh`](install.sh) script
+3. Run the [`install.sh`](install.sh) script:
+   ```shell
+   . ./install.sh
+   ```
 
 ## Repository Structure
 
