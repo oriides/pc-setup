@@ -108,49 +108,80 @@
       become: true
       get_url:
         url: "https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf"
-        dest: /usr/share/fonts/PowerlineSymbols.otf
+        dest: "/usr/share/fonts/PowerlineSymbols.otf"
         owner: root
         group: root
     - name: "configs : Install font (Powerline Symbols) - Step 2/2"
       become: true
       get_url:
         url: "https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf"
-        dest: /etc/fonts/conf.d/10-powerline-symbols.conf
+        dest: "/etc/fonts/conf.d/10-powerline-symbols.conf"
         owner: root
         group: root
 
-- name: "configs : Install Google fonts"
-  become: true
-  shell: |
-    wget -O "/tmp/{{ item }}.zip" "https://fonts.google.com/download?family={{ item | urlencode }}"
-    unzip "/tmp/{{ item }}.zip" -d "/tmp/{{ item }}"
-    rm -r "/tmp/{{ item }}/static" || true
-    sudo chown -R root:root "/tmp/{{ item }}"
-    sudo cp -R "/tmp/{{ item }}" "/usr/share/fonts/"
-    sudo rm -r "/tmp/{{ item }}"
-  with_items:
-    - IBM Plex Sans
-    - IBM Plex Serif
-    - Inter
-    - Lexend
-    - Montserrat
-    - Outfit
-    - Raleway
-    - Space Grotesk
+- block:
+    - name: "configs : Install Google fonts - Step 1/3 (set font list)"
+      set_fact:
+        google_fonts:
+          - "ibmplexsans/IBMPlexSans[wdth,wght].ttf"
+          - "ibmplexsans/IBMPlexSans-Italic[wdth,wght].ttf"
+          - "ibmplexserif/IBMPlexSerif-Regular.ttf"
+          - "ibmplexserif/IBMPlexSerif-Italic.ttf"
+          - "inter/Inter[opsz,wght].ttf"
+          - "inter/Inter-Italic[opsz,wght].ttf"
+          - "lexend/Lexend[wght].ttf"
+          - "montserrat/Montserrat[wght].ttf"
+          - "montserrat/Montserrat-Italic[wght].ttf"
+          - "outfit/Outfit[wght].ttf"
+          - "raleway/Raleway[wght].ttf"
+          - "raleway/Raleway-Italic[wght].ttf"
+          - "spacegrotesk/SpaceGrotesk[wght].ttf"
+    - name: "configs : Install Google fonts - Step 2/3 (create target directories)"
+      become: true
+      file:
+        path: "/usr/share/fonts/google-fonts/{{ item | dirname }}"
+        state: directory
+        owner: root
+        group: root
+      with_items: "{{ google_fonts }}"
+    - name: "configs : Install Google fonts - Step 3/3 (download font files)"
+      become: true
+      get_url:
+        url: "https://github.com/google/fonts/raw/refs/heads/main/ofl/{{ item | urlencode }}"
+        dest: "/usr/share/fonts/google-fonts/{{ item }}"
+        owner: root
+        group: root
+      with_items: "{{ google_fonts }}"
+      retries: 3
+      delay: 3
 
-- name: "configs : Install Nerd Fonts" # for powerline # TODO: keep release version up to date
-  become: true
-  shell: |
-    wget -O "/tmp/{{ item }}.zip" "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/{{ item | urlencode }}.zip"
-    unzip "/tmp/{{ item }}.zip" -d "/tmp/NF_{{ item }}"
-    sudo chown -R root:root "/tmp/NF_{{ item }}"
-    sudo cp -R "/tmp/NF_{{ item }}" "/usr/share/fonts/"
-    sudo rm -r "/tmp/NF_{{ item }}"
-  with_items:
-    - IBMPlexMono
-    - IntelOneMono
-    - SpaceMono
-    - UbuntuMono
+- block:
+    - name: "configs : Install Nerd Fonts - Step 1/3 (set font list)"
+      set_fact:
+        nerd_fonts:
+          - IBMPlexMono
+          - IntelOneMono
+          - SpaceMono
+          - UbuntuMono
+    - name: "configs : Install Nerd Fonts - Step 2/3 (create target directories)"
+      become: true
+      file:
+        path: "/usr/share/fonts/nerd-fonts/{{ item }}"
+        state: directory
+        owner: root
+        group: root
+      with_items: "{{ nerd_fonts }}"
+    - name: "configs : Install Nerd Fonts - Step 3/3 (download font files)"
+      become: true
+      unarchive:
+        remote_src: true
+        src: "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/{{ item | urlencode }}.tar.xz" # TODO: keep release version up-to-date
+        dest: "/usr/share/fonts/nerd-fonts/{{ item }}"
+        owner: root
+        group: root
+      with_items: "{{ nerd_fonts }}"
+      retries: 3
+      delay: 3
 
 - name: "configs : Reload font cache"
   shell: fc-cache -vf
