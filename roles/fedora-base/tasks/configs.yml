@@ -87,8 +87,9 @@
 ### Install Starship prompt using cargo
 
 - name: "configs : Install Starship Prompt (using cargo)"
-  shell: |
-    cargo install starship --locked
+  community.general.cargo:
+    name: starship
+    locked: true
 
 ################################################################################
 ### Suppress podman-docker warning
@@ -97,7 +98,7 @@
   become: true
   file:
     path: /etc/containers/nodocker
-    state: touch
+    state: file
     mode: 644
 
 ################################################################################
