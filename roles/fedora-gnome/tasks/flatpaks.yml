@@ -24,5 +24,4 @@
     - io.github.nokse22.inspector # Inspector
     - io.missioncenter.MissionCenter # Mission Center (System Monitor)
     - org.gnome.World.PikaBackup # Pika Backup
-    - io.github.alainm23.planify # Planify
     - org.gnome.PowerStats # Power Statistics
