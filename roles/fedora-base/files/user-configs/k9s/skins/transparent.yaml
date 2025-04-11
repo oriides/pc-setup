@@ -11,7 +11,7 @@ k9s:
     fieldFgColor: default
   frame:
     crumbs:
-      bgColor: default
+      bgColor: grey
     title:
       bgColor: default
       counterColor: default
