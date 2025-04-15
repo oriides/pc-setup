@@ -25,23 +25,22 @@ Compile and install torchlight
 
 - [YouTube Music](https://music.youtube.com)
 - [ARD Audiothek](https://www.ardaudiothek.de/)
-- [Todoist](https://app.todoist.com/app)
 - [Google Drive](https://drive.google.com)
 - [Google Photos](https://photos.google.com)
 - [Diagrams.net](https://app.diagrams.net)
 - [Discord](https://discord.com/app)
-- [TMDB](https://www.themoviedb.org/)
 - [WhatsApp Web](https://web.whatsapp.com/)
 - Google Docs suite (Just shortcuts)
 - Teams & Outlook for work
 
 ## Please manually install these GNOME Extensions
 
-- [Blur my Shell](https://extensions.gnome.org/extension/3193/blur-my-shell/)
+<!-- - [Blur my Shell](https://extensions.gnome.org/extension/3193/blur-my-shell/) -->
 - [Dash to Dock](https://extensions.gnome.org/extension/307/dash-to-dock/)
 - [ddterm](https://extensions.gnome.org/extension/3780/ddterm/)
-- [gsconnect](https://extensions.gnome.org/extension/1319/gsconnect/)
+- [GSConnect](https://extensions.gnome.org/extension/1319/gsconnect/)
 - [Just Perfection](https://extensions.gnome.org/extension/3843/just-perfection/)
 - [Night Theme Switcher](https://extensions.gnome.org/extension/2236/night-theme-switcher/)
 <!-- - [Pano - Clipboard Manager](https://extensions.gnome.org/extension/5278/pano/) -->
 - [Removable Drive Menu](https://extensions.gnome.org/extension/7/removable-drive-menu/)
+- [Tiling Assistant](https://extensions.gnome.org/extension/3733/tiling-assistant/)
