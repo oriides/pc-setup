@@ -16,8 +16,10 @@
     state: present
   with_items:
     - org.audacityteam.Audacity # Audacity
+    - net.natesales.Aviator # Aviator (AV1 encoder GUI)
     - com.bitwarden.desktop # Bitwarden
     - org.blender.Blender # Blender
+    - com.cassidyjames.butler # Butler (Home Assistant)
     - com.github.wwmm.easyeffects # Easy Effects
     - com.github.tchx84.Flatseal # Flatseal
     - org.gimp.GIMP # GIMP
@@ -29,7 +31,11 @@
     - com.obsproject.Studio # OBS
     - com.obsproject.Studio.Plugin.Gstreamer # OBS Plugin
     - com.obsproject.Studio.Plugin.GStreamerVaapi # OBS Plugin
-    - md.obsidian.Obsidian # Markdown Notes
+    - md.obsidian.Obsidian # Obsidian (Markdown Notes)
     - org.onlyoffice.desktopeditors # OnlyOffice
+    - tv.plex.PlexDesktop # Plex
     - com.todoist.Todoist # Todoist
+    - org.videolan.VLC # VLC
+    - org.videolan.VLC.Plugin.bdj # VLC (Blu-Ray Java Menus)
+    - org.videolan.VLC.Plugin.makemkv # VLC (MakeMKV decryption)
     - dev.zed.Zed # Zed Editor

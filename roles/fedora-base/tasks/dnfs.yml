@@ -161,7 +161,6 @@
     - scrcpy # Android screen mirroring
     - solaar # Logitech peripherals manager
     - steam # Steam
-    - vlc # VLC
 
 - name: "dnf : Update all DNF packages"
   become: true
