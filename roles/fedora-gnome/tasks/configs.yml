@@ -96,6 +96,14 @@
     value: true
 
 ################################################################################
+### Configure Mouse Acceleration
+
+- name: "configs : dconf : Disable Mouse Acceleration"
+  dconf:
+    key: "/org/gnome/desktop/peripherals/mouse/accel-profile"
+    value: "flat"
+
+################################################################################
 ### Set Fonts
 
 - block:
