@@ -31,13 +31,11 @@ Ansible playbook for setting up my personal PC
 │   │       ├── main.yml
 │   │       └── …
 │   ├── fedora-intel-graphics/
+│   │   ├── files/
+│   │   │   └── …
 │   │   └── tasks/
 │   │       ├── main.yml
 │   │       └── …
-│   └── …
-├── scripts/
-│   ├── git-config.sh
-│   ├── zsh-config.sh
 │   └── …
 ├── install.sh
 ├── inventory
@@ -47,24 +45,19 @@ Ansible playbook for setting up my personal PC
 
 The `roles` folder contains the configurations for the different roles (see
 [Roles](#roles) for more details). Each role contains some `tasks` and
-optionally some `files` that are used to setup the PC. Tasks are usually grouped
-into `dnfs`, `flatpaks` and `configs` the contents of which is applied through
-the corresponding `main.yml`. Change the contents of these tasks to make changes
-to how the PC is setup.
-
-The `scripts` folder contains some extra scripts that I don't want to run with
-ansible (as they require user attention).  
-The `git-config.sh` script sets up my git config (name, email, pull.rebase)  
-The `zsh-config.sh` script installs and configures oh-my-zsh
+optionally some `files` that are used to set up the PC. Tasks are usually
+grouped into `dnfs`, `flatpaks` and `configs` the contents of which is applied
+through the corresponding `main.yml`. Change the contents of these tasks to
+make changes to how the PC is set up.
 
 The `install.sh` script is used to start the PC setup installation
 
-The `inventory` file contains the hosts and their location on which the ansible
+The `inventory` file contains the hosts and their location on which the Ansible
 setup runs. Since this is a local installation the location of the host is
 "localhost". The name of the host may be changed, but beware that the name also
 needs to be changed in the `site.yml`.
 
-The `README.md` is this readme.
+The `README.md` is this README.
 
 The `site.yml` is the file that specifies which roles should be applied to which
 host. If your PC setup changes in a major way (e.g. different desktop
@@ -75,7 +68,7 @@ need to be defined in the `roles` directory).
 
 #### fedora-base
 
-This is the base role for every fedora setup, independent from desktop
+This is the base role for every fedora setup, independent of desktop
 environment and graphics stack, installing what I consider are must have
 applications and adjusting the necessary configurations.
 
@@ -91,10 +84,10 @@ GPU hardware on a fedora system.
 
 ## Troubleshooting
 
-- If ansible hangs after you have entered the BECOME password **and** you have
-  setup fingerprint authentication, simply authenticate with your fingerprint
+- If Ansible hangs after you have entered the BECOME password **and** you have
+  set up fingerprint authentication, simply authenticate with your fingerprint
   even if you are not prompted to. [This is a bug with
-  ansible](https://github.com/ansible/ansible/issues/73308).
+  Ansible](https://github.com/ansible/ansible/issues/73308).
 
 You can test the Ansible Playbook using the `--check` flag when calling the
 Ansible Playbook command, like so:
