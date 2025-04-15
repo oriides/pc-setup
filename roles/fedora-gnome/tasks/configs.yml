@@ -182,6 +182,19 @@
         key: "/org/gnome/desktop/wm/keybindings/switch-windows"
         value: "['<Alt>Tab']"
 
+################################################################################
+### Configure Trash & Tempfile Deletion
+
+- block:
+    - name: "configs : dconf : Trash & Tempfile Deletion - Step 1/2"
+      dconf:
+        key: "/org/gnome/desktop/privacy/remove-old-trash-files"
+        value: true
+    - name: "configs : dconf : Trash & Tempfile Deletion - Step 2/2"
+      dconf:
+        key: "/org/gnome/desktop/privacy/remove-old-temp-files"
+        value: true
+
 # FIXME: These don't work like this anymore
 ################################################################################
 ### Configure Keyboard Shortcut for Terminal
