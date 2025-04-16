@@ -162,6 +162,15 @@
     - solaar # Logitech peripherals manager
     - steam # Steam
 
+- name: "dnf : Install non-repo packages"
+  become: true
+  dnf:
+    name: "{{ item }}"
+    state: present
+    disable_gpg_check: true # TODO: verify signatures and remove this
+  with_items:
+    - "https://github.com/derailed/k9s/releases/latest/download/k9s_linux_amd64.rpm" # k9s
+
 - name: "dnf : Update all DNF packages"
   become: true
   dnf:
