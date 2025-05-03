@@ -211,6 +211,7 @@
     - k9s
     - MangoHud
     - mpv
+    - pipewire
     - solaar
     - starship.toml
 
