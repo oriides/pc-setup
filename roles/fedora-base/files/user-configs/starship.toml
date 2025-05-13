@@ -144,7 +144,6 @@ disabled = false
 symbol = "󱃾"
 style = "fg:color_purple bg:color_transparent"
 format = "[$symbol $context ]($style)"
-detect_env_vars = ["KUBECONFIG"]
 
 ################################################################################
 ### Programming language version info
