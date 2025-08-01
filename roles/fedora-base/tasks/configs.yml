@@ -205,7 +205,7 @@
 
 - name: "configs : Copy user configs into ~/.config"
   copy:
-    src: "{{ role_path }}/files/user-configs/{{ item }}"
+    src: "{{ role_path }}/files/dotfiles/.config/{{ item }}"
     dest: "~/.config/"
   with_items:
     - k9s
@@ -214,6 +214,7 @@
     - pipewire
     - solaar
     - starship.toml
+    - uxplayrc
 
 ################################################################################
 ### Configure cron
